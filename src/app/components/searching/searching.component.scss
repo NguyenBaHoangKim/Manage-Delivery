@@ -1,0 +1,67 @@
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  max-width: 900px; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+#tracking-form {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  box-sizing: border-box;
+    #tracking-form input[type="text"] {
+      width: 150px;
+      padding: 5px;
+      font-size: 16px;
+    }
+    
+    #tracking-form input[type="submit"] {
+      width: 120px;
+      padding: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    }  
+}
+
+
+.tracking-info {
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  .tracking-info h2 {
+    margin-top: 0;
+  }
+  
+  .tracking-info p {
+    margin: 5px 0;
+  }
+}
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 3px; /* Độ cong viền của nút */
+  color: white;
+  padding: 4px 4px; /* Điều chỉnh padding của nút */
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 10px; /* Điều chỉnh margin của nút để nút và input không cách xa nhau quá nhiều */
+  cursor: pointer;
+  width: 100px; /* Đặt chiều rộng của nút tương xứng với input */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước ngoài của nút */
+}
+
