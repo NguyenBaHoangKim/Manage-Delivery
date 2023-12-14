@@ -1,0 +1,39 @@
+<div class="body">
+    <div class="container">
+      <div id="tracking-form">
+        <h2>Quản lý đơn hàng</h2>
+  
+        <!-- Ô tìm kiếm -->
+        <input type="text" [(ngModel)]="searchCode" placeholder="Nhập mã đơn hàng">
+  
+        <button class="button" (click)="searchOrder()">Tìm kiếm</button>
+  
+        <!-- Hiển thị thông tin đơn hàng -->
+        <div class="tracking-info">
+          <div class="order-info">
+            <div class="info-item">
+              <span class="info-label">Mã đơn hàng:</span>
+              <span class="info-value">XYZ123</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Tên đơn hàng:</span>
+              <span class="info-value">ABC</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Thời gian:</span>
+              <span class="info-value">12:00 PM, 25/12/2023</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Vị trí:</span>
+              <span class="info-value">HCMC, Vietnam</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Trạng thái đơn hàng:</span>
+              <span class="info-value">Đang giao hàng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -7,6 +7,9 @@ import { DemoComponent } from './components/demo/demo.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
+import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { SearchingComponent } from './components/searching/searching.component';
     DemoComponent,
     NavigatorComponent,
     PageNotFoundComponent,
-    SearchingComponent
+    SearchingComponent,
+    HeaderpointmanageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

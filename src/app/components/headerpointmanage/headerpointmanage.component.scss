@@ -1,0 +1,79 @@
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ... (Các phần CSS khác như đã cung cấp) */
+
+.tracking-info {
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.info-value {
+  color: #333;
+}
+
+
+input[type="text"] {
+  width: 50%;
+  height: px;
+  padding: 16px;
+  display: inline;
+  -webkit-box-align: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.418);
+  border-radius: 6px;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.button {
+  background: rgb(20, 161, 48);
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-family: "SF UI Text Bold", sans-serif;
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-transition: .2s linear;
+    transition: all .2s linear 0s;
+    outline: 0!important;
+
+}
