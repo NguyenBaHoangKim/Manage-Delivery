@@ -50,11 +50,12 @@
       }
   
       .dashboard,
-      .search {
+      .search{
         border-bottom: 1px solid #ccc; /* Add bottom border for separation */
       }
   
       .logout {
+        align-items: center;
         margin-top: auto; /* Push Log out to bottom */
       }
     }
