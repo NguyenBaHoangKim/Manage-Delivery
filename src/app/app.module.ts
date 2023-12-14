@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
+import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
+import { FormsModule } from '@angular/forms';
+import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { PointStaffCreatComponent } from './components/point-staff-creat/point-staff-creat.component';
 import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
 import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
@@ -20,6 +27,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NavigatorComponent,
     PageNotFoundComponent,
     SearchingComponent,
+    HeaderpointmanageComponent,
+    HeaderpointaccountComponent,
+    PopupComponent,
+    OdercreationComponent
     NavStaffComponent,
     PointStaffCreatComponent,
     PointStaffExceptComponent,
@@ -30,7 +41,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     provideClientHydration()

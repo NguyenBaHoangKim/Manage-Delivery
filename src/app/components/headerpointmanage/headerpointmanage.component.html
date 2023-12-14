@@ -1,0 +1,39 @@
+<!-- order-list.component.html -->
+<div class="body">
+  <div class="container">
+    <div id="tracking-form">
+      <h2>Quản lý đơn hàng</h2>
+
+      <!-- Ô tìm kiếm -->
+      <input type="text" [(ngModel)]="searchCode" placeholder="Nhập mã đơn hàng">
+
+      <button class="button" (click)="searchOrder()">Tìm kiếm</button>
+
+      <!-- Hiển thị danh sách đơn hàng -->
+      <div class="tracking-info">
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã đơn hàng</th>
+              <th>Tên đơn hàng</th>
+              <th>Thời gian</th>
+              <th>Vị trí</th>
+              <th>Trạng thái đơn hàng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders; let i = index" class="order-info">
+              <td>{{ i + 1 }}</td>
+              <td>{{ order.orderId }}</td>
+              <td>{{ order.orderName }}</td>
+              <td>{{ order.time }}</td>
+              <td>{{ order.location }}</td>
+              <td>{{ order.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
