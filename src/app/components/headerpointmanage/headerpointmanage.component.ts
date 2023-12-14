@@ -6,11 +6,42 @@ import { Component } from '@angular/core';
   styleUrl: './headerpointmanage.component.scss'
 })
 export class HeaderpointmanageComponent {
-  searchCode: string = 'acs'; // Đảm bảo khai báo searchCode với kiểu dữ liệu phù hợp (ở đây là string)
+  searchCode: string = '';
+  orders: any[] = [ // Mảng chứa danh sách đơn hàng
+    {
+      orderId: 'XYZ123',
+      orderName: 'ABC',
+      time: '12:00 PM, 25/12/2023',
+      location: 'HCMC, Vietnam',
+      status: 'Đang giao hàng'
+    },
+    {
+      orderId: 'XYZ123',
+      orderName: 'ABC',
+      time: '12:00 PM, 25/12/2023',
+      location: 'HCMC, Vietnam',
+      status: 'Đang giao hàng'
+    },
+    {
+      orderId: 'XYZ123',
+      orderName: 'ABC',
+      time: '12:00 PM, 25/12/2023',
+      location: 'HCMC, Vietnam',
+      status: 'Đang giao hàng'
+    },
+    // {
+    //   orderId: 'XYZ123',
+    //   orderName: 'ABC',
+    //   time: '12:00 PM, 25/12/2023',
+    //   location: 'HCMC, Vietnam',
+    //   status: 'Đang giao hàng'
+    // },
+    // Thêm các đơn hàng khác vào đây
+  ];
 
-  // Các phương thức và logic khác của component
   searchOrder() {
-    // Logic xử lý khi thực hiện tìm kiếm đơn hàng
-    console.log('Search order function');
+    // Thực hiện tìm kiếm đơn hàng dựa trên searchCode
+    console.log('Search order function. Search code:', this.searchCode);
+    // Logic tìm kiếm đơn hàng và cập nhật danh sách orders nếu cần
   }
 }

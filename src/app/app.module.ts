@@ -9,7 +9,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SearchingComponent } from './components/searching/searching.component';
 import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
 import { FormsModule } from '@angular/forms';
-
+import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OdercreationComponent } from './components/odercreation/odercreation.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +23,16 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     SearchingComponent,
     HeaderpointmanageComponent,
+    HeaderpointaccountComponent,
+    PopupComponent,
+    OdercreationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     provideClientHydration()
