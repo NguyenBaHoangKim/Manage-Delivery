@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoComponent } from './components/demo/demo.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
@@ -14,11 +13,17 @@ import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
+import { PointStaffCreatComponent } from './components/point-staff-creat/point-staff-creat.component';
+import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
+import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
+import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
+import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
     NavigatorComponent,
     PageNotFoundComponent,
     SearchingComponent,
@@ -26,6 +31,13 @@ import { OdercreationComponent } from './components/odercreation/odercreation.co
     HeaderpointaccountComponent,
     PopupComponent,
     OdercreationComponent
+    NavStaffComponent,
+    PointStaffCreatComponent,
+    PointStaffExceptComponent,
+    PointStaffExceptOutComponent,
+    PointStaffCreatTopointComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
