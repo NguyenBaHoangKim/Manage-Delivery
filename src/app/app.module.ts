@@ -11,6 +11,8 @@ import { PointStaffExceptComponent } from './components/point-staff-except/point
 import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
 import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PointStaffCreatTopointComponent } from './components/point-staff-creat-
     PointStaffCreatComponent,
     PointStaffExceptComponent,
     PointStaffExceptOutComponent,
-    PointStaffCreatTopointComponent
+    PointStaffCreatTopointComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

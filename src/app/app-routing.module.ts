@@ -6,6 +6,10 @@ import { PointStaffCreatComponent } from './components/point-staff-creat/point-s
 import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
 import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './auth.guard';
+import { AuthClassGuard } from './auth-class.guard';
 
 const routes: Routes = [
   { path: '', component: PointStaffExceptComponent },
@@ -14,6 +18,18 @@ const routes: Routes = [
   { path: 'point-staff-except', component: PointStaffExceptComponent},
   { path: 'point-staff-creat', component: PointStaffCreatComponent },
   { path: 'point-staff-creat-topoint', component: PointStaffCreatTopointComponent },
+
+  { 
+    path: 'dashboard', 
+    component: DashboardComponent, 
+    // canActivate: [AuthClassGuard], 
+    canActivate: [authGuard],
+    data: {
+      role: 'ADMIN'
+    }
+  },
+  { path: 'login', component: LoginComponent, canActivate: [authGuard] },
+
   { path: '**', component: PageNotFoundComponent},
 ];
 
