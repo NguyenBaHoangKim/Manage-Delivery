@@ -65,24 +65,3 @@ body {
     background: #ff7f7f; /* Màu nút khi hover */
   }
   
-
-  textarea {
-    width: 96%; /* Độ rộng 100% của phần tử cha */
-    min-height: 100px; /* Chiều cao tối thiểu */
-    padding: 10px; /* Khoảng cách bên trong */
-    border: 1px solid #ccc; /* Viền */
-    border-radius: 5px; /* Bo góc */
-    font-size: 14px; /* Kích thước chữ */
-    line-height: 1.5; /* Độ cao dòng */
-    transition: border-color 0.3s ease; /* Hiệu ứng chuyển đổi màu viền */
-    resize: none;
-    &:focus {
-      outline: none; /* Loại bỏ viền focus mặc định */
-      border-color: rgba(0,0,0,0.1); /* Màu viền khi focus */
-    }
-  }
-  
-  textarea{
-    font-family: 'Roboto', sans-serif;
-
-  }

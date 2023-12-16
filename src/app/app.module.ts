@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoComponent } from './components/demo/demo.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
@@ -14,18 +13,19 @@ import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
+import { OderacceptComponent } from './components/oderaccept/oderaccept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
     NavigatorComponent,
     PageNotFoundComponent,
     SearchingComponent,
     HeaderpointmanageComponent,
     HeaderpointaccountComponent,
     PopupComponent,
-    OdercreationComponent
+    OdercreationComponent,
+    OderacceptComponent,
   ],
   imports: [
     BrowserModule,
