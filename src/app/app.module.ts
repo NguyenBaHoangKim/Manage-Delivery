@@ -11,6 +11,8 @@ import { PointStaffExceptComponent } from './components/point-staff-except/point
 import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
 import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
+import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PointStaffCreatTopointComponent } from './components/point-staff-creat-
     PointStaffCreatComponent,
     PointStaffExceptComponent,
     PointStaffExceptOutComponent,
-    PointStaffCreatTopointComponent
+    PointStaffCreatTopointComponent,
+    HeadServiceManageAccountComponent,
+    HeadServiceManageGoodsComponent
   ],
   imports: [
     BrowserModule,
