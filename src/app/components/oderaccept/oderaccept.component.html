@@ -1,16 +1,23 @@
 <div class="body">
     <div class="container">
-    <h1>Tạo đơn hàng</h1>
-    <button class="button"> Ghi nhận đơn hàng </button>
+    <h1>Xác nhận đơn hàng từ điểm tập kết</h1>
     <div id="tracking-form">
-        <form>
-        <input class="input" type="text" placeholder="Tên người gửi...">
-        <input class="input" type="text" placeholder="Số điện thoại...">
-        <input class="input" type="text" placeholder="Loại hàng...">
-        <input class="input" type="text" placeholder="Mô tả...">
-        <input class="input" type="text" placeholder="Cân nặng...">
-        <input class="input" type="text" placeholder="Số lượng...">
-        </form>
+        <table>
+            <thead>
+              <tr>
+                <th>Mã vận đơn</th>
+                <th>Loại hàng</th>
+                <th>trạng thái</th>
+                <th></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ accept.id}}</td>
+                <td>{{ accept.type }}</td>
+                <td>{{ accept.status }}</td>
+                <td><button class="button2">cập nhật</button></td>
+            </tbody>
+          </table>
     </div>
 
     </div>

@@ -43,25 +43,56 @@ body {
   }
   
   /* Button */
-  .button {
-    background: rgb(20, 161, 48);
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    width: 150px;
-    height: 48px;
-    font-size: 16px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0;
-    margin-top: 10px; /* Thêm margin top cho nút */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
+  .button2{
+    background-color: rgb(20, 161, 48);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
   }
   
   .button:hover {
     background: #ff7f7f; /* Màu nút khi hover */
   }
   
+  $border-radius: 8px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: $border-radius;
+    overflow: hidden;
+  
+    th, td {
+      border: none;
+      padding: 12px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  
+    td:first-child, th:first-child {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+  
+    td:last-child, th:last-child {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+    .delete-button {
+      
+    }
+    
+  }
