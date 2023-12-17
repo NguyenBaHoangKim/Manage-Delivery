@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
+import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
+import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
 import { PointStaffCreatComponent } from './components/point-staff-creat/point-staff-creat.component';
 import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
 import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';

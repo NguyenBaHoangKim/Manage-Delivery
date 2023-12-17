@@ -1,0 +1,64 @@
+    .body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    max-width: 900px; 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  #tracking-form {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+  
+   input[type="text"] {
+    width: 50%;
+    height: px;
+    padding: 5px;
+    display: inline;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 6px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 5px;
+  }
+  .tracking-info {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .button {
+    background: rgb(20, 161, 48);
+      border-radius: 5px;
+      display: inline;
+      border: 0;
+      color: #fff;
+      font-family: "SF UI Text Bold", sans-serif;
+      width: 150px;
+      height: 48px;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 25px;
+      position: relative;
+      margin: 5px;
+      cursor: pointer;
+      -webkit-transition: .2s linear;
+      transition: all .2s linear 0s;
+      outline: 0!important;
+  }
+  
+  

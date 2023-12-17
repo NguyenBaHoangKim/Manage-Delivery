@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
+import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
+import { FormsModule } from '@angular/forms';
+import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { PointStaffCreatComponent } from './components/point-staff-creat/point-staff-creat.component';
 import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
 import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
@@ -14,12 +21,17 @@ import { PointStaffCreatTopointComponent } from './components/point-staff-creat-
 import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavigatorComponent,
     PageNotFoundComponent,
     SearchingComponent,
+    HeaderpointmanageComponent,
+    HeaderpointaccountComponent,
+    PopupComponent,
+    OdercreationComponent,
     NavStaffComponent,
     PointStaffCreatComponent,
     PointStaffExceptComponent,
@@ -30,7 +42,10 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     provideClientHydration()
