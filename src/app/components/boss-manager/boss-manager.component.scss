@@ -1,0 +1,108 @@
+$logo: #4a707a;
+$background: #f4f4f4;
+
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.location-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  margin: 10px;
+}
+
+.info-box {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #c3c3c3;
+  border-radius: 8px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.image-box {
+  width: 30%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #c3c3c3;
+  border-radius: 8px;
+  margin-left: auto;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 50%;
+  height: 14px;
+  padding: 16px;
+  display: inline;
+  -webkit-box-align: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.418);
+  border-radius: 6px;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.button {
+  background: $logo;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  font-family: "SF UI Text Bold", sans-serif;
+  width: 150px;
+  height: 48px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 25px;
+  position: relative;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s linear;
+  transition: all .2s linear 0s;
+  outline: 0!important;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+button:hover{
+  background: $logo;
+}
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $background;
+  min-height: 100vh;
+}
+h2{
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}

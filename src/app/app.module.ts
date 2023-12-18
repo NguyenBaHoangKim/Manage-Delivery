@@ -20,6 +20,8 @@ import { PointStaffExceptOutComponent } from './components/point-staff-except-ou
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
 import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
+import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
     PointStaffExceptOutComponent,
     PointStaffCreatTopointComponent,
     HeadServiceManageAccountComponent,
-    HeadServiceManageGoodsComponent
+    HeadServiceManageGoodsComponent,
+    BossManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +49,10 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    HttpClientModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

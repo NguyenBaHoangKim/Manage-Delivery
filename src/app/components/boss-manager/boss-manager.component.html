@@ -1,0 +1,22 @@
+<div class="body">
+  <div class="container">
+    <h2>Quản lý tài khoản của nhân viên</h2>
+    <div class="head">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm ...">
+      <button class="button"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+    </div>
+
+    <div class="main">
+      <div *ngFor="let location of locations" class="location-item">
+        <div class="info-box">
+          <div class="info" >
+            <h2>{{ location.name }}</h2>
+            <p>Vị trí: {{ location.location }}</p>
+            <p>Số lượng: {{ location.count }}</p>
+          </div>
+          <div class="image-box" [style.backgroundImage]="'url(' + location.imageUrl + ')'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
