@@ -17,6 +17,18 @@ $background: #f4f4f4;
     box-sizing: border-box;
     
   }
+  .delete-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
   .tracking-info {
     font-family: Arial, sans-serif;
@@ -64,7 +76,7 @@ $background: #f4f4f4;
   }
   
   input[type="text"] {
-    width: 53%;
+    width: 50%;
     height: 14px;
     padding: 16px;
     display: inline;
@@ -90,11 +102,11 @@ $background: #f4f4f4;
     padding: 0 25px;
     position: relative;
     margin: 5px;
-    margin: auto;
     cursor: pointer;
     -webkit-transition: .2s linear;
     transition: all .2s linear 0s;
     outline: 0!important;
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -115,26 +127,4 @@ $background: #f4f4f4;
   
   h2{
     font-family: Arial, sans-serif;
-  }
-  
-
-  textarea {
-    width: 54%; /* Độ rộng 100% của phần tử cha */
-    min-height: 100px; /* Chiều cao tối thiểu */
-    padding: 10px; /* Khoảng cách bên trong */
-    border: 1px solid #ccc; /* Viền */
-    border-radius: 5px; /* Bo góc */
-    font-size: 14px; /* Kích thước chữ */
-    line-height: 1.5; /* Độ cao dòng */
-    transition: border-color 0.3s ease; /* Hiệu ứng chuyển đổi màu viền */
-    resize: none;
-    &:focus {
-      outline: none; /* Loại bỏ viền focus mặc định */
-      border-color: rgba(0,0,0,0.1); /* Màu viền khi focus */
-    }
-  }
-  
-  textarea{
-    font-family: 'Roboto', sans-serif;
-
   }

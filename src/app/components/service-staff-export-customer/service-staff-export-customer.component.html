@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="container">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <h2>Xuất đơn hàng đến người dùng</h2>
+  
+      <div class="head">
+        <input type="text" id="searchInput" placeholder="Nhập tên tài khoản">
+        <button class="button"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+      </div>
+      
+      <div class="tracking-info"><table>
+          <thead>
+            <tr>
+              <th>Mã nhân viên</th>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Số điện thoại</th>
+              <th></th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let userdata of userdata">
+                  <td>{{ userdata.id }}</td>
+                  <td>{{ userdata.type }}</td>
+                  <td>{{ userdata.email }}</td>
+                  <td>{{ userdata.status }}</td>
+                  <td><button class="delete-button" (click)="openPopup()">xác nhận</button></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  </div>
+  

@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <h2>Thông tin đơn hàng</h2>
+    <p><strong>ID:</strong> {{ userdata?.id }}</p>
+    <p><strong>Loại hàng:</strong> {{ userdata?.type }}</p>
+    <p><strong>Email:</strong> {{ userdata?.email }}</p>
+    <p><strong>Số điện thoại:</strong> {{ userdata?.phone }}</p>
+    <p><strong>Trạng thái:</strong> {{ userdata?.status }}</p>
+    <div class="container">
+    <button class="delete-button" style="background-color:green;">Thành công</button>
+    <button class="delete-button" style="background-color: red;">Không thành công</button>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Đóng</button>
+  </mat-dialog-actions>

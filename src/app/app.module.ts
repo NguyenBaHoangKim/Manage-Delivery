@@ -21,6 +21,9 @@ import { PointStaffExceptOutComponent } from './components/point-staff-except-ou
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
 import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
+import { ServiceStaffExportCustomerComponent } from './components/service-staff-export-customer/service-staff-export-customer.component';
+import { ServiceStaffExportPointComponent } from './components/service-staff-export-point/service-staff-export-point.component';
+import { ServiceStaffPopupComponent } from './components/service-staff-popup/service-staff-popup.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
     PointStaffExceptOutComponent,
     PointStaffCreatTopointComponent,
     HeadServiceManageAccountComponent,
-    HeadServiceManageGoodsComponent
+    HeadServiceManageGoodsComponent,
+    ServiceStaffExportCustomerComponent,
+    ServiceStaffExportPointComponent,
+    ServiceStaffPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,7 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
     MatDialogModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

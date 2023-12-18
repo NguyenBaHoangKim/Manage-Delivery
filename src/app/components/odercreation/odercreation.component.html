@@ -1,7 +1,6 @@
 <div class="body">
     <div class="container">
         <h1>Tạo đơn hàng</h1>
-        <button class="button">Xác nhận</button>
         <div id="tracking-form">
             <form>
                 <input class="input" type="text" placeholder="Tên người gửi...">
@@ -12,8 +11,15 @@
                     <option value="Giấy tờ"></option>
                 </datalist>                
                 <input class="input" type="text" placeholder="Cân nặng...">
-                <input class="input" type="text" placeholder="Số lượng...">
+                <input class="input" list="types1" type="text" placeholder="Số lượng...">
+                <datalist id="types1" >
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                </datalist>    
                 <textarea  placeholder="Mô tả..." rows="4"></textarea>
+                <div class="head"><button class="button">Xác nhận</button></div>
             </form>
         </div>
     </div>
