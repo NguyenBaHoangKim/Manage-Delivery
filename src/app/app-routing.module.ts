@@ -6,12 +6,15 @@ import { SearchingComponent } from './components/searching/searching.component';
 import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
 import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
+import { OderacceptComponent } from './components/oderaccept/oderaccept.component';
 
 const routes: Routes = [
   { path: '', component: SearchingComponent },
   { path: 'headerpoint-manage', component: HeaderpointmanageComponent },
   { path: 'headerpoint-accounts', component: HeaderpointaccountComponent },
   { path: 'odercreation', component: OdercreationComponent },
+  { path: 'oderaccept', component: OderacceptComponent },
+
   { path: 'search', component: SearchingComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
