@@ -1,21 +1,25 @@
-export interface Post {
-    userId: number;
-    id: number;
-    title: String;
-    body: string;
-  }
-
 export interface User {
   id: number;
   username: string;
   email: string;
   phone: string;
-  name: string;
 }
 
 export interface Order {
-  orderId: string,
+  id: string,
   address: string,
-  status: string,
-  date: string,
+  weight: number,
+  quantity: number,
+  oderDate: string,
+  oderStatus: string,
 }
+
+export interface OrderReq {
+  id: string,
+  address: string,
+  weight: number,
+  quantity: number,
+  oderDate: string,
+  oderStatus: string,
+}
+
