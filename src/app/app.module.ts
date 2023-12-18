@@ -14,6 +14,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { OderacceptComponent } from './components/oderaccept/oderaccept.component';
+import { PointStaffCreatComponent } from './components/point-staff-creat/point-staff-creat.component';
+import { PointStaffExceptComponent } from './components/point-staff-except/point-staff-except.component';
+import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
+import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
+import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
+import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +34,13 @@ import { OderacceptComponent } from './components/oderaccept/oderaccept.componen
     PopupComponent,
     OdercreationComponent,
     OderacceptComponent,
+    NavStaffComponent,
+    PointStaffCreatComponent,
+    PointStaffExceptComponent,
+    PointStaffExceptOutComponent,
+    PointStaffCreatTopointComponent,
+    HeadServiceManageAccountComponent,
+    HeadServiceManageGoodsComponent
   ],
   imports: [
     BrowserModule,

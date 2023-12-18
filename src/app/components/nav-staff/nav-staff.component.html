@@ -6,20 +6,12 @@
             <div class="name1"><b class="magicpost">MagicPost</b></div>
         </div>
 
-        <div class="dashboard item">
-            <span class="material-symbols-outlined">dashboard</span>
-            <button class="name" mat-button routerLink="">Dashboard</button>
-            <!-- <div class="name">
-                Dashboard
-            </div> -->
-        </div>
-
-        <div class="search item">
-            <span class="material-symbols-outlined">search</span>
-            <button class="name" mat-button routerLink="search">Tra cứu đơn hàng</button>
-            <!-- <div class="name">
-                Tra cứu đơn hàng
-            </div> -->
+        <div *ngFor="let menu of menus" 
+            [ngClass]="'item ' + (selectedMenuItem == menu ? 'menu-selected': '')"
+            [routerLink]="menu.path"
+            (click)="onClickItem(menu)">
+            <span class="material-symbols-outlined menu-icon">{{menu.iconStr}}</span>
+            <div class="name" >{{menu.title}}</div>
         </div>
 
         <div class="logout item3">

@@ -1,15 +1,13 @@
 <!-- order-list.component.html -->
 <div class="body">
   <div class="container">
-    <div id="tracking-form">
       <h2>Quản lý đơn hàng</h2>
+      
+    <div class="head">
+      <input type="text" placeholder="Nhập mã đơn hàng">
+      <button class="button" (click)="searchOrder()"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+    </div>
 
-      <!-- Ô tìm kiếm -->
-      <input type="text" [(ngModel)]="searchCode" placeholder="Nhập mã đơn hàng">
-
-      <button class="button" (click)="searchOrder()">Tìm kiếm</button>
-
-      <!-- Hiển thị danh sách đơn hàng -->
       <div class="tracking-info">
         <table class="order-table">
           <thead>
@@ -34,6 +32,5 @@
           </tbody>
         </table>
       </div>
-    </div>
   </div>
 </div>

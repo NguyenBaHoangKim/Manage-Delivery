@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from '../popup/popup.component'; // Đường dẫn đến PopupComponent
+// import { MatDialog } from '@angular/material/dialog';
+// import { PopupComponent } from '../popup/popup.component'; // Đường dẫn đến PopupComponent
 
 @Component({
-  selector: 'app-headerpointaccount',
-  templateUrl: './headerpointaccount.component.html',
-  styleUrls: ['./headerpointaccount.component.scss']
+  selector: 'app-head-service-manage-account',
+  templateUrl: './head-service-manage-account.component.html',
+  styleUrl: './head-service-manage-account.component.scss'
 })
-export class HeaderpointaccountComponent {
-
-  constructor(private dialogRef: MatDialog) {}
+export class HeadServiceManageAccountComponent {
+  // constructor(private dialogRef: MatDialog) {}
+  searchCode: string = '';
   accounts: any[] = [
     {
       employeeId: 'E123',
@@ -33,9 +33,9 @@ export class HeaderpointaccountComponent {
   ];
   openPopup(): void {
     console.log("được rồi nề")
-    this.dialogRef.open(PopupComponent, {
-      width: '600px',
-      data: {}
-    });
+    // this.dialogRef.open(PopupComponent, {
+    //   width: '600px',
+    //   data: {}
+    // });
   }
 }
