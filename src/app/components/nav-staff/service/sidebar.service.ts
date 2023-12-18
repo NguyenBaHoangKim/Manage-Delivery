@@ -58,6 +58,24 @@ export class SidebarService {
         iconStr: 'dashboard',
         path:"/head-service-manage-goods"
       },
+      {
+        id: 9,
+        title: 'Tạo đơn hàng',
+        iconStr: 'dashboard',
+        path:"/creat-order"
+      },
+      {
+        id: 10,
+        title: 'Quản lý hàng hóa',
+        iconStr: 'dashboard',
+        path:"/head-point-manage-goods"
+      },
+      {
+        id: 11,
+        title: 'Quản lý tài khoản',
+        iconStr: 'dashboard',
+        path:"/head-point-manage-account"
+      },
     ]
     return of(menu)
   }

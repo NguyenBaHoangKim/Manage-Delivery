@@ -1,21 +1,32 @@
-<div class="container">
+<div class="body">
+  <div class="container">
     <h2>Quản lý tài khoản của nhân viên</h2>
-    <input type="text" id="searchInput" placeholder="Nhập tên tài khoản">
-    <button class="button">Tìm kiếm</button>
-    <button class="add-button" style="display: block; padding-top: 15px;"  (click)="openPopup()"></button>
+
+    <div class="head">
+      <input type="text" id="searchInput" placeholder="Nhập tên tài khoản">
+      <button class="button"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+      <button class="add-button button" (click)="openPopup()"><span class="material-symbols-outlined">add</span>Thêm tài khoản</button>
+    </div>
+    
     <div class="tracking-info"><table>
         <thead>
           <tr>
             <th>Mã nhân viên</th>
-            <th>Tài khoản</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
             <th></th>
         </thead>
         <tbody>
-          <tr>
-            <td>VD001</td>
-            <td>HCM City</td>
-            <td><button class="delete-button">Xóa</button></td>
+            <tr *ngFor="let account of accounts">
+                <td>{{ account.employeeId }}</td>
+                <td>{{ account.fullName }}</td>
+                <td>{{ account.email }}</td>
+                <td>{{ account.phone }}</td>
+                <td><button class="delete-button">Xóa</button></td>
+            </tr>
         </tbody>
       </table>
     </div>
+</div>
 </div>

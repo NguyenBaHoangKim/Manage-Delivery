@@ -10,16 +10,22 @@ import { PointStaffExceptOutComponent } from './components/point-staff-except-ou
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
 import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
+import { OdercreationComponent } from './components/odercreation/odercreation.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HeadServiceManageGoodsComponent },
+  { path: '', component: HeaderpointmanageComponent },
   { path: 'search', component: SearchingComponent},
   { path: 'point-staff-except-out', component: PointStaffExceptOutComponent },
   { path: 'point-staff-except', component: PointStaffExceptComponent},
-  { path: 'point-staff-creat', component: PointStaffCreatComponent },
-  { path: 'point-staff-creat-topoint', component: PointStaffCreatTopointComponent },
-  { path: 'head-service-manage-account', component: HeadServiceManageAccountComponent },
-  { path: 'head-service-manage-goods', component: HeadServiceManageGoodsComponent },
+  { path: 'point-staff-creat', component: PointStaffCreatComponent},
+  { path: 'point-staff-creat-topoint', component: PointStaffCreatTopointComponent},
+  { path: 'head-service-manage-account', component: HeadServiceManageAccountComponent},
+  { path: 'head-service-manage-goods', component: HeadServiceManageGoodsComponent},
+  { path: 'creat-order', component: OdercreationComponent},
+  { path: 'head-point-manage-account', component: HeaderpointaccountComponent},
+  { path: 'head-point-manage-goods', component: HeaderpointmanageComponent},
+  { path: 'log-in', component: LoginComponent},
   { path: '**', component: PageNotFoundComponent},
 ];
 
