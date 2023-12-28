@@ -4,8 +4,11 @@ $logo: #4a707a;
 
 
 .container{
-    height: 100%;
+    height: 90%;
     display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; 
+    flex-direction: row;
 }
 
 .background-container{
@@ -17,29 +20,26 @@ $logo: #4a707a;
     align-items: center;
     color: #ddddda;
     .background-image {
-        height: 70%;
+        height: 80%;
         object-fit: cover; /* Đảm bảo ảnh nằm đúng vị trí */
-
     }
-    h3 {
-        position: absolute;
-        top: 100px;
-        left: 360px;
-        transform: translate(-50%, -50%);
-        z-index: 1; /* Đảm bảo H3 hiển thị trên hình ảnh */
-        margin: 0;
-      }
+   
 }
 
 .login-form{
-    bottom: 120px;
-    padding: 30px;
-    width: 40%;
+    height: 400px;
+    padding: 10px;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction:column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 20px;
+
     .logo {
-        height: 20%;
+        height: 100px;
+        padding: 20px;
     }
     .example-form {
         min-width: 150px;
@@ -49,7 +49,36 @@ $logo: #4a707a;
       
     .example-full-width {
         width: 100%;
-      }
-     
+        padding: 10px 0;
+    }
 }
+.button {
+    background: $logo;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-family: "SF UI Text Bold", sans-serif;
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-transition: .2s linear;
+    transition: all .2s linear 0s;
+    outline: 0!important;
+    
+    display: block;
+    flex-direction: row;
+    align-items: center;
+  }
+  button:hover{
+    background-color: #ddddda;
+  }
 
+  .img1{
+    width: 30%;
+  }

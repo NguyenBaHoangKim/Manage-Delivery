@@ -1,6 +1,9 @@
 {
     "/api/*": {
-        "target": "http://192.31.98.40:8080",
+        "target": "https://postman-echo.com/get",
+        "pathRewrite": {
+            "^/rest": ""
+          },
         "secure": false,
         "logLevel": "debug"
     }

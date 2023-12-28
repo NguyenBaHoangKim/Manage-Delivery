@@ -31,7 +31,7 @@ export class HeadServiceManageGoodsComponent {
   }
 
   fetchOrders(): void {
-    this.orderService.getOrdersHere("BCTX01").subscribe(
+    this.orderService.getOrdersTest().subscribe(
       (orders: Order[]) => {
         console.log("hi"+ orders);
         this.orders = orders

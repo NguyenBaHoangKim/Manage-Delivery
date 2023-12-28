@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Order, OrderWithId, User } from '../../model/user';
+import { Order, OrderStatus, OrderWithId, User } from '../../model/user';
 import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { UsersServiceService } from '../../services/users-service.service';
 import { OrderService } from '../../services/order.service';
@@ -11,9 +11,24 @@ import { OrderService } from '../../services/order.service';
 })
 export class SearchingComponent implements OnInit{
   orders: Order | undefined; // Khởi tạo và đặt giá trị ban đầu là null
+  liststatus: OrderStatus[]
 
 constructor(private orderService: OrderService ) {
-  this.orders
+  this.orders;
+  this.liststatus=[
+  {
+    status: 'Processing',
+    date: '2023-12-28T10:00:00Z'
+  },
+  {
+    status: 'Shipped',
+    date: '2023-12-29T09:30:00Z'
+  },
+  {
+    status: 'Delivered',
+    date: '2023-12-30T13:45:00Z'
+  }
+];;
 }
 
 ngOnInit(): void {
@@ -30,4 +45,6 @@ getOrderById(orderId: string){
       }
     );
 }
+
+
 }

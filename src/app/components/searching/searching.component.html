@@ -7,11 +7,19 @@
         </div>
 
         <div class="tracking-info">
-            <h2>Thông tin vận đơn</h2>
-            <p><strong>Mã vận đơn:</strong> ABC123456789</p>
-            <p><strong>Tên hàng hóa:</strong> Sản phẩm A</p>
-            <p><strong>Ngày và giờ:</strong> 01/01/2024 10:00 AM</p>
-            <p><strong>Trạng thái:</strong> Đang giao hàng</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Thời gian</th>
+                <th>Trạng thái</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let status of liststatus">
+                    <td>{{ status.date }}</td>
+                    <td>{{ status.status }}</td>                    
+                </tr>
+            </tbody>
+          </table>
         </div>
     </div>
 </div>

@@ -10,6 +10,9 @@ export class DashboardComponent {
   constructor( private router: Router) {
     console.log('dashboard');
   }
+  login(){
+    this.router.navigate(['/log-in'])
+  }
   logout() {
     const confirmation = confirm("Thoát ra bây giờ ưưưưưư");
     if (confirmation === true) {

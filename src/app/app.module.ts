@@ -32,6 +32,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -59,6 +60,7 @@ import {MatInputModule} from '@angular/material/input';
     BossManagerComponent,
     DashboardComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

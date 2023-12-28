@@ -35,7 +35,7 @@ export class OrderService {
   
   getOrdersTest(): Observable<Order[]> {
     console.log('dang test get order')
-    return this.http.get<Order[]>(`http://localhost:8080/order`,{
+    return this.http.get<Order[]>(`https://postman-echo.com/get`,{
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
