@@ -84,3 +84,36 @@ button {
   border: none;
   background: none;
 }
+
+$lefbar: #ddddda;
+$hover: #4a707a;
+$logo: #4a707a;
+
+.nav-bar {
+  font-family: "Arial", sans-serif;
+  background-color: $lefbar;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: $logo;
+}
+
+.logo .material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  /* Cài đặt các thuộc tính khác nếu cần thiết */
+}
+
+
+  
+ 
+  
+
+  
+ 

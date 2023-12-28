@@ -33,9 +33,18 @@ $my-app2-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($my-app2-theme);
 
+
+
+
 /* You can add global styles to this file, and also import other style files */
 $logo: #73abbb;
 $background: #f4f4f4;
 body {
     margin: 0px;
 }
+
+html, body {
+  height: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

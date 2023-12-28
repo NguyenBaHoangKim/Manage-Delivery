@@ -13,6 +13,7 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { LoginComponent } from './components/login/login.component';
 import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: BossManagerComponent },
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'log-in', component: LoginComponent},
   { path: 'boss-manager', component: BossManagerComponent},
   { path: '**', component: PageNotFoundComponent},
+  { path: '', component: DashboardComponent},
+
 ];
 
 @NgModule({
