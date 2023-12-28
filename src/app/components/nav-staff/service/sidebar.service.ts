@@ -19,62 +19,68 @@ export class SidebarService {
       {
         id: 2,
         title: 'Xác nhận đơn hàng đi',
-        iconStr: 'dashboard',
+        iconStr: 'done',
         path:"/point-staff-except-out"
       },
       {
         id: 3,
         title: 'Xác nhận đơn hàng đến',
-        iconStr: 'dashboard',
+        iconStr: 'done',
         path:"/point-staff-except"
       },
       {
         id: 4,
         title: 'Tạo đơn chuyển hàng đến điểm giao dịch',
-        iconStr: 'dashboard',
+        iconStr: 'swap_vert',
         path:"/point-staff-creat"
       },
       {
         id: 5,
         title: 'Tạo đơn chuyển hàng đến điểm tập kết',
-        iconStr: 'dashboard',
+        iconStr: 'move_group',
         path:"/point-staff-creat-topoint"
       },
       {
         id: 6,
         title: 'Tìm kiếm đơn hàng',
-        iconStr: 'dashboard',
+        iconStr: 'search',
         path:"/search"
       },
       {
         id: 7,
         title: 'Quản lý tài khoản',
-        iconStr: 'dashboard',
+        iconStr: 'manage_accounts',
         path:"/head-service-manage-account"
       },
       {
         id: 8,
         title: 'Quản lý hàng hóa',
-        iconStr: 'dashboard',
+        iconStr: 'manage_search',
         path:"/head-service-manage-goods"
       },
       {
         id: 9,
         title: 'Tạo đơn hàng',
-        iconStr: 'dashboard',
+        iconStr: 'edit_square',
         path:"/creat-order"
       },
       {
         id: 10,
         title: 'Quản lý hàng hóa',
-        iconStr: 'dashboard',
+        iconStr: 'manage_search',
         path:"/head-point-manage-goods"
       },
       {
         id: 11,
         title: 'Quản lý tài khoản',
-        iconStr: 'dashboard',
+        iconStr: 'manage_accounts',
         path:"/head-point-manage-account"
+      },
+      {
+        id: 12,
+        title: 'Quản lý tổng kho',
+        iconStr: 'settings_accessibility',
+        path:"/boss-manager"
       },
     ]
     return of(menu)

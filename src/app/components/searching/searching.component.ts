@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../model/user';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Order, OrderWithId, User } from '../../model/user';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { UsersServiceService } from '../../services/users-service.service';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-searching',
@@ -9,38 +10,24 @@ import { UsersServiceService } from '../../services/users-service.service';
   styleUrl: './searching.component.scss'
 })
 export class SearchingComponent implements OnInit{
+  orders: Order | undefined; // Khởi tạo và đặt giá trị ban đầu là null
 
-  userList: User[] = [];
-
-  constructor(private userService: UsersServiceService){}
-
-  ngOnInit() {
-    this.userService.getListUser().subscribe(
-      data => {
-        this.userList = data;
-      },
-      error => {
-        console.error('Error fetching user list:', error);
-      }
-    );
-  }
+constructor(private orderService: OrderService ) {
+  this.orders
 }
 
-  
-  // constructor(private http : HttpClient){
-  //   this.userList = []
-  // }
-  // ngOnInit() :void {
-  //   this.getUserList()
-  // }
+ngOnInit(): void {
+  this.getOrderById("1ff0a690-a350-11ee-8028-c1aef4fbdbdd")   
+}
 
-  // getUserList() {
-  //   this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
-  //     (result: User[]) => {
-  //       this.userList = result;
-  //     },
-  //     error => {
-  //       console.error('Error fetching user list:', error);
-  //     }
-  //   );
-  // }
+getOrderById(orderId: string){
+  this.orderService.getOrderWithId(orderId).subscribe(
+      (returnObject: Order) => {
+        this.orders = returnObject;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+}
+}

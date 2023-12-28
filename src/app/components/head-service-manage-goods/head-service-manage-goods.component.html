@@ -23,11 +23,11 @@
             <tbody>
               <tr *ngFor="let order of orders; let i = index" class="order-info">
                 <td>{{ i + 1 }}</td>
-                <td>{{ order.orderId }}</td>
-                <td>{{ order.orderName }}</td>
-                <td>{{ order.time }}</td>
-                <td>{{ order.location }}</td>
-                <td>{{ order.status }}</td>
+                <td>{{ order.id }}</td>
+                <td>{{ order.name }}</td>
+                <td>{{ order.address }}</td>
+                <td>{{ order.weight }}</td>
+                <td>{{ order.quantity }}</td>
               </tr>
             </tbody>
           </table>

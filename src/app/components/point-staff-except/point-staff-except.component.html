@@ -17,12 +17,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>VD001</td>
-            <td>HCM City</td>
-            <td>Shipped</td>
-            <td>HCM City</td>
-            <td>Okela</td>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.name }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.weight }}</td>
+            <td>{{ order.quantity }}</td>
           </tr>
         </tbody>
       </table>

@@ -11,50 +11,41 @@ export class BossManagerComponent {
       name: 'Địa điểm 1',
       location: 'Hà Nội, Việt Nam',
       count: 10,
-      imageUrl: 'your-image-url-1.jpg'
     },
     {
       name: 'Địa điểm 2',
       location: 'Đà Nẵng, Việt Nam',
       count: 5,
-      imageUrl: 'your-image-url-2.jpg'
     },
     {
       name: 'Địa điểm 3',
       location: 'Hồ Chí Minh, Việt Nam',
       count: 8,
-      imageUrl: 'your-image-url-3.jpg'
-    },
-    {
-      name: 'Địa điểm 3',
-      location: 'Hồ Chí Minh, Việt Nam',
-      count: 8,
-      imageUrl: 'your-image-url-3.jpg'
-    },
-    {
-      name: 'Địa điểm 3',
-      location: 'Hồ Chí Minh, Việt Nam',
-      count: 8,
-      imageUrl: 'your-image-url-3.jpg'
-    },
-    {
-      name: 'Địa điểm 3',
-      location: 'Hồ Chí Minh, Việt Nam',
-      count: 8,
-      imageUrl: 'your-image-url-3.jpg'
-    },
-    {
-      name: 'Địa điểm 3',
-      location: 'Hồ Chí Minh, Việt Nam',
-      count: 8,
-      imageUrl: 'your-image-url-3.jpg'
-    },
-    // Thêm các địa điểm khác vào đây
+    }
   ];
+// employees:  EmployeeInfo[] = [];
+employee: EmployeeInfo = 
+  {
+    quanLy: "Nguyễn Văn A",
+    maNhanVien: "NV001",
+    email: "nva@example.com",
+    lienHe: "0123456789",
+    soNhanVien: 8,
+  }
+
 }
+
+
 export interface Location {
   name: string;
   location: string;
   count: number;
-  imageUrl: string;
+}
+
+export interface EmployeeInfo {
+  quanLy: string;
+  maNhanVien: string;
+  email: string;
+  lienHe: string;
+  soNhanVien: number;
 }

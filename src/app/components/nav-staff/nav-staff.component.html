@@ -6,7 +6,7 @@
             <div class="name1"><b class="magicpost">MagicPost</b></div>
         </div>
 
-        <div *ngFor="let menu of menus" 
+        <div *ngFor="let menu of menus"
             [ngClass]="'item ' + (selectedMenuItem == menu ? 'menu-selected': '')"
             [routerLink]="menu.path"
             (click)="onClickItem(menu)">

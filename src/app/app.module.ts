@@ -21,7 +21,9 @@ import { PointStaffCreatTopointComponent } from './components/point-staff-creat-
 import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
 import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -41,18 +43,25 @@ import { HttpClientModule } from '@angular/common/http';
     PointStaffCreatTopointComponent,
     HeadServiceManageAccountComponent,
     HeadServiceManageGoodsComponent,
-    BossManagerComponent
+    BossManagerComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
     HttpClientModule,
   ],
   providers: [
     provideClientHydration(),
+    provideHttpClient(withFetch()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

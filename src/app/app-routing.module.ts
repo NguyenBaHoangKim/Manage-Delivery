@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'head-point-manage-account', component: HeaderpointaccountComponent},
   { path: 'head-point-manage-goods', component: HeaderpointmanageComponent},
   { path: 'log-in', component: LoginComponent},
+  { path: 'boss-manager', component: BossManagerComponent},
   { path: '**', component: PageNotFoundComponent},
 ];
 
