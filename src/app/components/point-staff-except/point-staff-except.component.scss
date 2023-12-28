@@ -1,4 +1,36 @@
-.tracking-info {
+$logo: #4a707a;
+$background: #f4f4f4;
+
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $background;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    
+  }
+  .delete-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tracking-info {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -15,11 +47,17 @@
     th, td {
       border: none;
       padding: 12px;
-      text-align: left;
+      text-align: center;
+    }
+
+    td {
+      background: white;
+      border-top: $background solid 5px;
     }
   
     th {
-      background-color: #f2f2f2;
+      background-color: $logo;
+      color: white;
     }
   
     tr:hover {
@@ -36,43 +74,57 @@
       border-bottom-right-radius: $border-radius;
     }
   }
+  
   input[type="text"] {
-    width: 600px;
-    height: 10px;
-    padding: 8px;
-    display: block;
-    margin-bottom: 8px;
+    width: 50%;
+    height: 14px;
+    padding: 16px;
+    display: inline;
     -webkit-box-align: center;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.418);
     border-radius: 6px;
     -webkit-box-pack: center;
     justify-content: center;
-    box-shadow: 2px 4px #888888 !important;
   }
-  #tracking-form {
-    background: #f4f4f4;
-    padding: 20px;
-    margin-top: 20px;
-    box-sizing: border-box;
+  
+  .button {
+    background: $logo;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-family: "SF UI Text Bold", sans-serif;
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-transition: .2s linear;
+    transition: all .2s linear 0s;
+    outline: 0!important;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  button:hover{
+    background: $logo;
   }
 
-  .button {
-    background: rgb(20, 161, 48);
-      border-radius: 5px;
-      border: 0;
-      color: #fff;
-      font-family: "SF UI Text Bold", sans-serif;
-      width: 150px;
-      height: 48px;
-      font-size: 16px;
-      text-transform: uppercase;
-      text-align: center;
-      padding: 0 25px;
-      position: relative;
-      margin: 5px;
-      cursor: pointer;
-      -webkit-transition: .2s linear;
-      transition: all .2s linear 0s;
-      outline: 0!important;
+  .add-button {
+    width: 210px;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  h2{
+    font-family: Arial, sans-serif;
   }

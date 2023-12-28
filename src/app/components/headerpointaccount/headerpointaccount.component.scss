@@ -1,8 +1,11 @@
-    .body {
+$logo: #4a707a;
+$background: #f4f4f4;
+
+.body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: $background;
     min-height: 100vh;
   }
   
@@ -12,6 +15,7 @@
     overflow: hidden;
     padding: 20px;
     box-sizing: border-box;
+    
   }
   .delete-button {
     background-color: #ff6347;
@@ -43,11 +47,17 @@
     th, td {
       border: none;
       padding: 12px;
-      text-align: left;
+      text-align: center;
+    }
+
+    td {
+      background: white;
+      border-top: $background solid 5px;
     }
   
     th {
-      background-color: #f2f2f2;
+      background-color: $logo;
+      color: white;
     }
   
     tr:hover {
@@ -64,29 +74,10 @@
       border-bottom-right-radius: $border-radius;
     }
   }
-//   .order-info {
-//     display: grid;
-//     grid-template-columns: 1fr 2fr;
-//   }
-  
-//   .info-item {
-//     display: flex;
-//     margin-bottom: 10px;
-//   }
-  
-//   .info-label {
-//     font-weight: bold;
-//     margin-right: 10px;
-//   }
-  
-//   .info-value {
-//     color: #333;
-//   }
-  
   
   input[type="text"] {
     width: 50%;
-    height: px;
+    height: 14px;
     padding: 16px;
     display: inline;
     -webkit-box-align: center;
@@ -96,58 +87,44 @@
     -webkit-box-pack: center;
     justify-content: center;
   }
-  .add-button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: rgb(20, 161, 48);
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-  }
   
-  .add-button::before,
-  .add-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2px;
-    height: 15px;
-    background-color: #fff;
-  }
-  
-  .add-button::before {
-    transform: translate(-50%, -50%);
-  }
-  
-  .add-button::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
   .button {
-    background: rgb(20, 161, 48);
-      border-radius: 5px;
-      border: 0;
-      color: #fff;
-      font-family: "SF UI Text Bold", sans-serif;
-      width: 150px;
-      height: 48px;
-      font-size: 16px;
-      text-transform: uppercase;
-      text-align: center;
-      padding: 0 25px;
-      position: relative;
-      margin: 5px;
-      cursor: pointer;
-      -webkit-transition: .2s linear;
-      transition: all .2s linear 0s;
-      outline: 0!important;
+    background: $logo;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-family: "SF UI Text Bold", sans-serif;
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-transition: .2s linear;
+    transition: all .2s linear 0s;
+    outline: 0!important;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   button:hover{
-    background: rgb(53, 199, 73);
-
+    background: $logo;
   }
 
+  .add-button {
+    width: 210px;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
   h2{
     font-family: Arial, sans-serif;
   }

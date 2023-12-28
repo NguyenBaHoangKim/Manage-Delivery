@@ -1,66 +1,86 @@
+$lefbar: #ddddda;
+$hover: #4a707a;
+$logo: #4a707a;
 
 .left-bar {
-    font-family: 'Arial', sans-serif;
-  
-    .container {
-      background-color: #f4f4f4;
-      width: 200px;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-  
-      .logo {
-        padding: 20px;
-        text-align: center;
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-        border-bottom: 1px solid #ccc;
-  
-        .material-symbols-outlined {
-          font-family: 'Material Symbols Outlined', sans-serif;
-        }
-  
-        .magicpost {
-          color: #ff5722; /* Change color if needed */
-        }
+  font-family: "Arial", sans-serif;
+
+  .container {
+    background-color: $lefbar;
+    width: 220px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: $logo;
+      border-bottom: 1px solid #fff;
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined", sans-serif;
+        color: $logo;
       }
-  
-      .item {
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #e0e0e0; /* Change color when hovering if needed */
-          cursor: pointer;
-        }
-  
-        .material-symbols-outlined {
-          margin-right: 10px; /* Adjust spacing if needed */
-          font-family: 'Material Symbols Outlined', sans-serif;
-        }
-  
-        .name {
-          font-size: 16px;
-        }
-      }
-  
-      .dashboard,
-      .search{
-        border-bottom: 1px solid #ccc; /* Add bottom border for separation */
-      }
-  
-      .logout {
-        align-items: center;
-        margin-top: auto; /* Push Log out to bottom */
+
+      .magicpost {
+        color: $logo; /* Change color if needed */
       }
     }
+
+    .logout {
+      align-items: center;
+      margin-top: auto; /* Push Log out to bottom */
+    }
   }
+}
+
+.item {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
   
-  button {
-    border: none;
+  .material-symbols-outlined {
+    margin-right: 10px; /* Adjust spacing if needed */
+    font-family: "Material Symbols Outlined", sans-serif;
   }
+
+  .name {
+    font-size: 16px;
+    color: $logo;
+  }
+}
+
+.menu-selected {
+  background-color: #7697ad;
+  color: white;
+
+  .menu-icon {
+    color: white;
+  }
+
+  .name {
+    color: white;
+  }
+}
+
+.item:hover {
+  background-color: $hover; /* Change color when hovering if needed */
+  cursor: pointer;
+  background-color: #7697ad74;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  color: $logo;
+}
+
+button {
+  border: none;
+  background: none;
+}

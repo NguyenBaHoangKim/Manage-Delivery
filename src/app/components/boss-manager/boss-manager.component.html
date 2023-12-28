@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="container">
+    <h2>Quản lý tài khoản của nhân viên</h2>
+    <div class="head">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm ...">
+      <button class="button"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+    </div>
+
+    <div class="main">
+      <div *ngFor="let location of locations" class="location-item">
+        <div class="info-box">
+          <div class="info" >
+            <h2>{{ location.location }}</h2>
+            <p>Mã kho: {{location.name}} </p>
+            <p>Vị trí: {{ location.location }}</p>
+            <p>Số lượng: {{ location.count }}</p>
+            <p> </p>
+          </div>
+          <div class="info">
+            <p>Quản lý: {{ employee.quanLy }}</p>
+            <p>Mã nhân viên: {{ employee.maNhanVien }}</p>
+            <p>Email: {{ employee.email }}</p>
+            <p>Liên hệ: {{ employee.lienHe }}</p>
+            <p>Số nhân viên: {{ employee.soNhanVien }}</p>
+            <hr /> <!-- Dùng đường gạch ngang để phân biệt giữa các nhân viên -->
+          </div>
+          
+          <!-- <div class="image-box" [style.backgroundImage]=""> -->
+            <img src="/assets/truck.png" alt="loiroi" >
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

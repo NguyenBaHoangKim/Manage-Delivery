@@ -18,8 +18,13 @@ import { PointStaffExceptComponent } from './components/point-staff-except/point
 import { NavStaffComponent } from './components/nav-staff/nav-staff.component';
 import { PointStaffExceptOutComponent } from './components/point-staff-except-out/point-staff-except-out.component';
 import { PointStaffCreatTopointComponent } from './components/point-staff-creat-topoint/point-staff-creat-topoint.component';
+import { HeadServiceManageAccountComponent } from './components/head-service-manage-account/head-service-manage-account.component';
+import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
+import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthInterceptor } from './auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -30,24 +35,33 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HeaderpointmanageComponent,
     HeaderpointaccountComponent,
     PopupComponent,
-    OdercreationComponent
+    OdercreationComponent,
     NavStaffComponent,
     PointStaffCreatComponent,
     PointStaffExceptComponent,
     PointStaffExceptOutComponent,
     PointStaffCreatTopointComponent,
+    HeadServiceManageAccountComponent,
+    HeadServiceManageGoodsComponent,
+    BossManagerComponent,
     LoginComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    HttpClientModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })
