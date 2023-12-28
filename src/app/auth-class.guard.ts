@@ -12,8 +12,8 @@ export class AuthClassGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      // console.log(route);
-      // console.log(state);
+      // // console.log(route);
+      // // console.log(state);
       // const token = localStorage.getItem('token');
       // // const router = inject(Router);
       // console.log('token', token);

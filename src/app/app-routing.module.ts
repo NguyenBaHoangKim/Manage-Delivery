@@ -17,6 +17,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: BossManagerComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'search', component: SearchingComponent},
   { path: 'point-staff-except-out', component: PointStaffExceptOutComponent },
   { path: 'point-staff-except', component: PointStaffExceptComponent},
@@ -30,7 +31,6 @@ const routes: Routes = [
   { path: 'log-in', component: LoginComponent},
   { path: 'boss-manager', component: BossManagerComponent},
   { path: '**', component: PageNotFoundComponent},
-  { path: '', component: DashboardComponent},
 
 ];
 

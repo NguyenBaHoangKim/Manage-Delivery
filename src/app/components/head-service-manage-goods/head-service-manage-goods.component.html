@@ -28,11 +28,13 @@
             <tbody>
               <tr *ngFor="let order of orders; let i = index" class="order-info">
                 <td>{{ i + 1 }}</td>
-                <td>{{ order.id }}</td>
                 <td>{{ order.name }}</td>
                 <td>{{ order.address }}</td>
                 <td>{{ order.weight }}</td>
                 <td>{{ order.quantity }}</td>
+                <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
+                  done
+                  </span>Shipped</td>
               </tr>
             </tbody>
           </table>

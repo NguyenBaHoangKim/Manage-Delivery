@@ -8,7 +8,7 @@ $logo: #4a707a;
   .container {
     background-color: $lefbar;
     width: 220px;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     display: flex;
@@ -20,7 +20,9 @@ $logo: #4a707a;
       font-size: 20px;
       font-weight: bold;
       color: $logo;
-      border-bottom: 1px solid #fff;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
 
       .material-symbols-outlined {
         font-family: "Material Symbols Outlined", sans-serif;

@@ -1,3 +1,5 @@
+import { LoginComponent } from "../components/login/login.component";
+
 export interface User {
   id: number;
   username: string;
@@ -64,10 +66,19 @@ export interface UserBoss {
 }
 
 
-
 export interface BossRes {
   serviceAddress: ServiceAddress,
   user: UserBoss,
   countEmployee : string,
   countOrder: string
+}
+
+export interface login{
+  email: string;
+  password: string;
+}
+
+export interface OrderStatus{
+  status: string;
+  date: string;
 }

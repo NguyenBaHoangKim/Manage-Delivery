@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../model/user';
+import { User, login } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +24,17 @@ export class UsersServiceService {
     return this.http.get<User[]>(this.URL)
   }
 
-login(username: string, password: string): Observable<any> {
-    const body = {
-      username: username,
+login(username: string, password: string): Observable<login> {
+    const body: login = {
+      email: username,
       password: password,
     };
 
-    return this.http.post<any>(`${this.URL}/login`, body, {
+    return this.http.post<login>(`${this.URL}`, body, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
     });
   }
+  
 }

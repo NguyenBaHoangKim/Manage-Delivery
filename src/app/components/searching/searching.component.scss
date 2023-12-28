@@ -1,93 +1,129 @@
 $logo: #4a707a;
 $background: #f4f4f4;
 
-
 .body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  min-height: 100vh;
-}
-
-.container {
-  width: 90%;
-  margin: auto;
-  overflow: hidden;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
- input[type="text"] {
-  width: 50%;
-  height: px;
-  padding: 16px;
-  display: inline;
-  -webkit-box-align: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.418);
-  border-radius: 6px;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-.tracking-info {
-  background: #fff;
-  margin-top: 20px;
-  padding: 20px;
-  .tracking-info h2 {
-    margin-top: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $background;
+    min-height: 100vh;
   }
   
-  .tracking-info p {
-    margin: 5px 0;
+  .container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
   }
-}
-input[type="text"] {
-  width: 600px;
-  height: 14px;
-  padding: 16px;
-  display: inline;
-  -webkit-box-align: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.418);
-  border-radius: 6px;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-
-.tracking-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  background: white;
-}
-
-.button {
-  background: $logo;
-  border-radius: 5px;
-  border: 0;
-  color: #fff;
-  font-family: "SF UI Text Bold", sans-serif;
-  width: 150px;
-  height: 48px;
-  font-size: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0 25px;
-  position: relative;
-  margin: 5px;
-  cursor: pointer;
-  -webkit-transition: .2s linear;
-  transition: all .2s linear 0s;
-  outline: 0!important;
+  .delete-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-button:hover{
-  background: $logo;
-}
+  .tracking-info {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  $border-radius: 8px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: $border-radius;
+    overflow: hidden;
+  
+    th, td {
+      border: none;
+      padding: 12px;
+      text-align: center;
+    }
 
+    td {
+      background: white;
+      border-top: $background solid 5px;
+    }
+  
+    th {
+      background-color: $logo;
+      color: white;
+    }
+  
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  
+    td:first-child, th:first-child {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+  
+    td:last-child, th:last-child {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+  
+  input[type="text"] {
+    width: 50%;
+    height: 14px;
+    padding: 16px;
+    display: inline;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 6px;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+  
+  .button {
+    background: $logo;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-family: "SF UI Text Bold", sans-serif;
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-transition: .2s linear;
+    transition: all .2s linear 0s;
+    outline: 0!important;
+    
+    display: inline;
+    flex-direction: row;
+    align-items: center;
+  }
+  button:hover{
+    background: $logo;
+  }
+
+  .add-button {
+    width: 210px;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  h2{
+    font-family: Arial, sans-serif;
+  }

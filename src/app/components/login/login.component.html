@@ -1,34 +1,39 @@
 <div class="container">
-    <div class="background-container">
+    <!-- <div class="background-container">
         <img class="background-image" src="/assets/back1.png" alt="">
-    </div>
+    </div> -->
+    <!-- <div class="img1">
+      <img src="/src/assets/linhtinh1.png" alt="">
+    </div> -->
+    <img src="/assets/tree.png" alt="">
     <div class="login-form">
-      <!-- <img src="/src/assets/logo.png" class="logo" alt=""> -->
+      <img src="/assets/logo1.png" class="logo" alt="">
         <form class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                     placeholder="Ex. pat@example.com">
-              <mat-hint>Errors appear instantly!</mat-hint>
-              @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                     placeholder="Ex. pat@example.com" [(ngModel)]="username">
+              <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Please enter a valid email address</mat-error>
               }
               @if (emailFormControl.hasError('required')) {
                 <mat-error>Email is <strong>required</strong></mat-error>
-              }
+              } -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Password</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                     placeholder="Ex. pat@example.com">
-              <mat-hint>Errors appear instantly!</mat-hint>
-              @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                     placeholder="Ex. pat@example.com" [(ngModel)]="password">
+              <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Please enter Password</mat-error>
               }
               @if (emailFormControl.hasError('required')) {
                 <mat-error>Password <strong>required</strong></mat-error>
-              }
+              } -->
             </mat-form-field>
           </form>
+           <button class="button" (click)="login">Đăng nhập</button>
+          
     </div>
+    <img src="/assets/linhtinh.png" alt="" >
 </div>

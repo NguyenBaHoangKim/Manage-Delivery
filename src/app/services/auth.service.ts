@@ -10,6 +10,11 @@ export class AuthService {
   //   const tokenString: string = JSON.stringify(token);
   //   localStorage.setItem('token', tokenString);
   // }
+  private isLoggedIn = false;
+
+  getIsLoggedIn(): boolean {
+    return this.isLoggedIn;
+  }
 
   getToken(): string | null {
     // let token = localStorage.getItem('token');
