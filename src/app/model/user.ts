@@ -26,18 +26,26 @@ export interface OrderWithId {
 }
 
 export interface OrderReq {
-  id: string,
-  address: string,
-  weight: number,
-  quantity: number,
-  oderDate: string,
-  oderStatus: string,
+  namefrom : string,
+  phonefrom : string,
+  name : string,
+  address : string,
+  weight : number,
+  quantity : number,
+  nameto : string,
+  phoneto : string,
+  description : string,
 }
 
-export interface Location {
+export interface ServiceAddress {
+  id: string,
   name: string;
-  location: string;
-  count: number;
+  address: string;
+}
+
+export interface OrderReqUpdate {
+  orderId: string,
+  serviceAddressId: string,
 }
 
 export interface EmployeeInfo {
@@ -46,4 +54,20 @@ export interface EmployeeInfo {
   email: string;
   lienHe: string;
   soNhanVien: number;
+}
+
+export interface UserBoss {
+  codeid: number;
+  username: string;
+  email: string;
+  phone_number: string;
+}
+
+
+
+export interface BossRes {
+  serviceAddress: ServiceAddress,
+  user: UserBoss,
+  countEmployee : string,
+  countOrder: string
 }

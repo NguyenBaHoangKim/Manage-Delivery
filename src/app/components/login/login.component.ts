@@ -11,7 +11,6 @@ import { ErrorStateMatcher } from '@angular/material/core'; // Import ErrorState
 export class LoginComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   
-  // Định nghĩa matcher là một đối tượng ErrorStateMatcher mới
   matcher = new ErrorStateMatcher();
 
   constructor(private router: Router) {}

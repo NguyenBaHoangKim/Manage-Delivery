@@ -2,9 +2,9 @@
     <div class="container">
     <h1>Tạo đơn chuyển hàng đến điểm giao dịch</h1>
     <div class="head">
-        <input type="text" placeholder="Mã vận đơn...">
-        <input type="text" placeholder="Vị trí đến...">
-        <button class="button"> tra cứu </button>
+        <input type="text" placeholder="Mã vận đơn..." [(ngModel)]="orderId">
+        <input type="text" placeholder="Vị trí đến..." [(ngModel)]="position">
+        <button class="button" (click)="updateOrderPosition()"> Xuất hàng </button>
     </div>
 
     <div class="tracking-info"><table>

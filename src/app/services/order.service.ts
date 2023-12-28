@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { OrderWithId, EmployeeInfo, Order } from '../model/user';
+import { OrderWithId, EmployeeInfo, Order, OrderReq, OrderReqUpdate } from '../model/user';
+import { environment } from '../../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,7 @@ export class OrderService {
   
   getOrdersTest(): Observable<Order[]> {
     console.log('dang test get order')
-    return this.http.get<Order[]>(`http://localhost:8080/order`,{
+    return this.http.get<Order[]>(`${environment.baseUrl}/order`,{
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
@@ -50,20 +51,20 @@ export class OrderService {
 
 
  orderTrans(_orderId: string, _position: string): Observable<Order> {
-  let body = {
+  const body: OrderReqUpdate = {
     orderId: _orderId,
     serviceAddressId: _position,
   };
   console.log(body)
-  return this.http.put<Order>(`http://localhost:8080/api/v1/orderStatus/update`, body, {
+  return this.http.put<Order>(`${environment.baseUrl}/api/v1/orderStatus/update`, body, {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   }); 
 }
 
-postNewOrder(newOrder: Order): Observable<Order> {
-  return this.http.post<Order>(`http://localhost:8080/new`, newOrder, {
+postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
+  return this.http.post<OrderReq>(`http://192.168.1.202:8080/order`, newOrder, {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),

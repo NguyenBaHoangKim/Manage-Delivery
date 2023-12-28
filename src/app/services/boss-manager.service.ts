@@ -1,31 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Location, EmployeeInfo } from '../model/user';
+import { BossRes } from '../model/user';
+import { environment } from '../../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BossManagerService {
 
-  private URL : string = 'https://jsonplaceholder.typicode.com/users'
-
-  locationList: Location[] = [];
-  employeeList: EmployeeInfo[] = []
+  data: BossRes[]
 
   constructor(private http : HttpClient){
-    this.locationList = []
+    this.data = []
   }
   ngOnInit() :void {
-    this.getListUser()
-    this.getListEmployee()
+    this.getBossData()
   }
 
-  getListUser(): Observable<Location[]> {
-    return this.http.get<Location[]>(this.URL)
-  }
-  
-  getListEmployee(): Observable<EmployeeInfo[]> {
-    return this.http.get<EmployeeInfo[]>(this.URL)
+  getBossData(): Observable<BossRes[]> {
+    return this.http.get<BossRes[]>(`${environment.baseUrl}/api/v1/boss`);
   }
 }

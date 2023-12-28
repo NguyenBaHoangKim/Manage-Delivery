@@ -44,4 +44,15 @@ export class HeaderpointmanageComponent {
     console.log('Search order function. Search code:', this.searchCode);
     // Logic tìm kiếm đơn hàng và cập nhật danh sách orders nếu cần
   }
+  inHere() {
+    console.log('Hang o day');
+  }
+
+  forword() {
+    console.log('Hang vua chuyen di');
+  }
+
+  begin() {
+    console.log('Hang sap toi');
+  }
 }

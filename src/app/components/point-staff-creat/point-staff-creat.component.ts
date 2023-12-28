@@ -14,12 +14,12 @@ export class PointStaffCreatComponent implements OnInit{
   constructor(private orderService: OrderService) {}
 
 ngOnInit() {
-this.updateOrderPosition('1ff0a690-a350-11ee-8028-c1aef4fbdbdd','BCTX01')
+// this.updateOrderPosition('1ff0a690-a350-11ee-8028-c1aef4fbdbdd','BCTX01')
 }
 
-  updateOrderPosition(orderId: string, position: string): void {
+  updateOrderPosition() {
     console.log('dang update')
-    this.orderService.orderTrans(orderId, position)
+    this.orderService.orderTrans(this.orderId, this.position)
       .subscribe(
         (updatedOrder: Order) => {
           console.log('Đơn hàng đã được cập nhật:', updatedOrder);

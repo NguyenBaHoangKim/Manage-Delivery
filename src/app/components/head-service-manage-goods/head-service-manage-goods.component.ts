@@ -27,17 +27,17 @@ export class HeadServiceManageGoodsComponent {
   }
 
   ngOnInit(): void {
-    this.fetchOrders();
+    // this.fetchOrders();
   }
 
   fetchOrders(): void {
-    this.orderService.getOrdersHere("BCTX01").subscribe(
+    this.orderService.getOrdersTest().subscribe(
       (orders: Order[]) => {
         console.log("hi"+ orders);
         this.orders = orders
       },
       (error) => {
-        console.log("loi getOrderHere roi huhuuuu");
+        console.log("loi getOrderTest roi huhuuuu");
         console.error(error);
       }
     );
@@ -47,5 +47,18 @@ export class HeadServiceManageGoodsComponent {
     // Thực hiện tìm kiếm đơn hàng dựa trên searchCode
     console.log('Search order function. Search code:', this.searchCode);
     // Logic tìm kiếm đơn hàng và cập nhật danh sách orders nếu cần
+  }
+
+  inHere() {
+    console.log('Hang o day (fetch)');
+    this.fetchOrders()
+  }
+
+  forword() {
+    console.log('Hang vua chuyen di');
+  }
+
+  begin() {
+    console.log('Hang sap toi');
   }
 }
