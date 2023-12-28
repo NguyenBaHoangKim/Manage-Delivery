@@ -7,10 +7,10 @@ import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchingComponent } from './components/searching/searching.component';
 import { HeaderpointmanageComponent } from './components/headerpointmanage/headerpointmanage.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderpointaccountComponent } from './components/headerpointaccount/headerpointaccount.component';
 import { PopupComponent } from './components/popup/popup.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogActions, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { OderacceptComponent } from './components/oderaccept/oderaccept.component';
@@ -24,6 +24,14 @@ import { HeadServiceManageGoodsComponent } from './components/head-service-manag
 import { ServiceStaffExportCustomerComponent } from './components/service-staff-export-customer/service-staff-export-customer.component';
 import { ServiceStaffExportPointComponent } from './components/service-staff-export-point/service-staff-export-point.component';
 import { ServiceStaffPopupComponent } from './components/service-staff-popup/service-staff-popup.component';
+import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ErrorStateMatcher } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -46,7 +54,10 @@ import { ServiceStaffPopupComponent } from './components/service-staff-popup/ser
     HeadServiceManageGoodsComponent,
     ServiceStaffExportCustomerComponent,
     ServiceStaffExportPointComponent,
-    ServiceStaffPopupComponent
+    ServiceStaffPopupComponent,
+    BossManagerComponent,
+    DashboardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +65,12 @@ import { ServiceStaffPopupComponent } from './components/service-staff-popup/ser
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    HttpClientModule,
+    MatDialogActions,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule, 
+    
   ],
   providers: [
     provideClientHydration(),

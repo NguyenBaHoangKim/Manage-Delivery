@@ -1,0 +1,55 @@
+$leftbar: #ddddda;
+$hover: #4a707a;
+$logo: #4a707a;
+
+
+.container{
+    height: 100%;
+    display: flex;
+}
+
+.background-container{
+    background-color: #4a707a;
+    overflow: hidden;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddddda;
+    .background-image {
+        height: 70%;
+        object-fit: cover; /* Đảm bảo ảnh nằm đúng vị trí */
+
+    }
+    h3 {
+        position: absolute;
+        top: 100px;
+        left: 360px;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* Đảm bảo H3 hiển thị trên hình ảnh */
+        margin: 0;
+      }
+}
+
+.login-form{
+    bottom: 120px;
+    padding: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+        height: 20%;
+    }
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      
+    .example-full-width {
+        width: 100%;
+      }
+     
+}
+

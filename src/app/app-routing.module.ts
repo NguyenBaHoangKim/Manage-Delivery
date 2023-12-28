@@ -12,9 +12,11 @@ import { HeadServiceManageAccountComponent } from './components/head-service-man
 import { HeadServiceManageGoodsComponent } from './components/head-service-manage-goods/head-service-manage-goods.component';
 import { OdercreationComponent } from './components/odercreation/odercreation.component';
 import { LoginComponent } from './components/login/login.component';
+import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: HeaderpointmanageComponent },
+  { path: '', component: BossManagerComponent },
   { path: 'search', component: SearchingComponent},
   { path: 'point-staff-except-out', component: PointStaffExceptOutComponent },
   { path: 'point-staff-except', component: PointStaffExceptComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'head-point-manage-goods', component: HeaderpointmanageComponent},
   { path: 'log-in', component: LoginComponent},
   { path: '**', component: PageNotFoundComponent},
+  { path: '', component: DashboardComponent},
+
 ];
 
 @NgModule({

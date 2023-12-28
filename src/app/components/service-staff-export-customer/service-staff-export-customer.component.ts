@@ -8,7 +8,7 @@ import { ServiceStaffPopupComponent } from '../service-staff-popup/service-staff
   styleUrl: './service-staff-export-customer.component.scss'
 })
 export class ServiceStaffExportCustomerComponent {
-  constructor(private dialogRef: MatDialog) {}
+  constructor(public dialogRef: MatDialog) {}
   userdata: any[] = [
     {
       id: 'E123',

@@ -1,0 +1,87 @@
+$lefbar: #ddddda;
+$hover: #4a707a;
+$logo: #4a707a;
+
+.nav-bar {
+  font-family: "Arial", sans-serif;
+  background-color: $lefbar;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: $logo;
+}
+
+.logo .material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  /* Cài đặt các thuộc tính khác nếu cần thiết */
+}
+
+.button {
+  background: none;
+  border: 1px solid $logo;
+  border-radius: 5px;
+  color: $logo;
+  font-family: "SF UI Text Bold", sans-serif;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all .2s linear 0s;
+}
+
+.button:hover {
+  background: $hover;
+  color: white;
+}
+
+main {
+  /* CSS cho nội dung chính của trang */
+}
+
+.site-footer {
+    position: fixed; /* Hoặc position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    background-color: $logo;
+    padding: 2px;
+    color: $logo;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 10px;
+    .footer-content {
+        display:inline;
+        float:left;
+        width: 660px;
+        color:#ffffff;
+        padding: 10px;
+        text-align: left;
+        margin: auto;
+        p{
+            color: #ddddda;
+        }
+    }
+    .footer-dev{
+        display: inline;
+        float: right;
+        padding: 20px;
+        text-align: right;
+        margin: auto;
+        color: #ffffff;
+    }
+    .footer-logo {
+        color: $logo;
+    }
+  }
+  
+ 
+  
+
+  
+ 
