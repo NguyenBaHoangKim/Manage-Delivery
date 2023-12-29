@@ -1,0 +1,21 @@
+$logo: #4a707a;
+
+.delete-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .delete-button  :hover{
+    background-color: $logo;
+  }
+  .container {
+    text-align: center;
+  }

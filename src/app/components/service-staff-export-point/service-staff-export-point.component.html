@@ -1,0 +1,24 @@
+<div class="body">
+    <div class="container">
+    <h1>Xuất đơn hàng đến điểm tập kết</h1>
+    <input style="display: inline;" type="text" placeholder="Mã vận đơn...">
+    <button class="button" style="display: inline; margin: 4px;">Xác nhận</button>
+    <div id="tracking-form">
+        <table>
+            <thead>
+              <tr>
+                <th>Mã vận đơn</th>
+                <th>Loại hàng</th>
+                <th>trạng thái</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ accept.id}}</td>
+                <td>{{ accept.type }}</td>
+                <td>{{ accept.status }}</td>
+            </tbody>
+          </table>
+    </div>
+
+    </div>
+</div>

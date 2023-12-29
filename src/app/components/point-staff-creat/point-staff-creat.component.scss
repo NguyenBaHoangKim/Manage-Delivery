@@ -86,6 +86,7 @@ $background: #f4f4f4;
     border-radius: 6px;
     -webkit-box-pack: center;
     justify-content: center;
+    margin-bottom: 5px;
   }
   
   .button {
@@ -101,7 +102,6 @@ $background: #f4f4f4;
     text-align: center;
     padding: 0 25px;
     position: relative;
-    margin: 5px;
     cursor: pointer;
     -webkit-transition: .2s linear;
     transition: all .2s linear 0s;

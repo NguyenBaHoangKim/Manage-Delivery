@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BossRes } from '../../model/user';
+import { BossManagerService } from '../../services/boss-manager.service';
 
 @Component({
   selector: 'app-boss-manager',
@@ -6,46 +8,28 @@ import { Component } from '@angular/core';
   styleUrl: './boss-manager.component.scss'
 })
 export class BossManagerComponent {
-  locations: Location[] = [
-    {
-      name: 'Địa điểm 1',
-      location: 'Hà Nội, Việt Nam',
-      count: 10,
-    },
-    {
-      name: 'Địa điểm 2',
-      location: 'Đà Nẵng, Việt Nam',
-      count: 5,
-    },
-    {
-      name: 'Địa điểm 3',
-      location: 'Hồ Chí Minh, Việt Nam',
-      count: 8,
-    }
-  ];
-// employees:  EmployeeInfo[] = [];
-employee: EmployeeInfo = 
-  {
-    quanLy: "Nguyễn Văn A",
-    maNhanVien: "NV001",
-    email: "nva@example.com",
-    lienHe: "0123456789",
-    soNhanVien: 8,
+  data: BossRes[]
+
+  constructor(private boss: BossManagerService){
+    this.data = [
+      
+    ]
   }
 
+  ngOnInit() :void {
+    this.getBossData()
+  }
+
+getBossData() {
+  this.boss.getBossData().subscribe(
+    (data) => {
+      this.data = data;
+      console.log('Data:', this.data);
+    },
+    (error) => {
+      console.error('Error fetching data:', error);
+    }
+  );
+}
 }
 
-
-export interface Location {
-  name: string;
-  location: string;
-  count: number;
-}
-
-export interface EmployeeInfo {
-  quanLy: string;
-  maNhanVien: string;
-  email: string;
-  lienHe: string;
-  soNhanVien: number;
-}

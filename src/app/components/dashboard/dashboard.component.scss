@@ -1,0 +1,63 @@
+$lefbar: #ddddda;
+$hover: #4a707a;
+$logo: #4a707a;
+
+.button {
+  background: none;
+  border: 1px solid $logo;
+  border-radius: 5px;
+  color: $logo;
+  font-family: "SF UI Text Bold", sans-serif;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all .2s linear 0s;
+  margin-left: auto;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: 50px;
+}
+// .button {
+//   background: $logo;
+//   border-radius: 5px;
+//   border: 0;
+//   color: #fff;
+//   font-family: "SF UI Text Bold", sans-serif;
+//   width: 150px;
+//   height: 48px;
+//   font-size: 16px;
+//   text-transform: uppercase;
+//   text-align: center;
+//   padding: 0 25px;
+//   position: relative;
+//   margin: 5px;
+//   cursor: pointer;
+//   -webkit-transition: .2s linear;
+//   transition: all .2s linear 0s;
+//   outline: 0!important;
+  
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+.button:hover {
+  background: $hover;
+  color: white;
+}
+
+.background-image {
+  width: 82%;
+  height: auto;
+  display: fixed;
+  position: absolute;
+  top: 30px;
+    img{
+      width: 100%;
+      height: auto;
+
+    }
+}
+  
+
+  
+ 

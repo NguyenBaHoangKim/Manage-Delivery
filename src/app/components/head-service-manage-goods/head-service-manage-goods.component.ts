@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Order } from '../../model/user';
+import { Order, OrderWithId } from '../../model/user';
 import { OrderService } from '../../services/order.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -9,43 +9,69 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './head-service-manage-goods.component.scss'
 })
 export class HeadServiceManageGoodsComponent {
-  searchCode: string = '';
-  // orders: any[] = [
-  //   {
-  //     orderId: 'XYZ123',
-  //     orderName: 'ABC',
-  //     time: '12:00 PM, 25/12/2023',
-  //     location: 'HCMC, Vietnam',
-  //     status: 'Đang giao hàng'
-  //   },
-  // ];
+  search: string = '';
   orders: Order[];
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService, private auth: AuthService) {
     this.orders = []
     console.log('hang ne' + this.orders)
     // console
   }
 
   ngOnInit(): void {
-    this.fetchOrders();
+    // this.fetchOrders();
   }
 
-  fetchOrders(): void {
-    this.orderService.getOrdersHere("BCTX01").subscribe(
-      (orders: Order[]) => {
-        console.log("hi"+ orders);
-        this.orders = orders
-      },
-      (error) => {
-        console.log("loi getOrderHere roi huhuuuu");
-        console.error(error);
-      }
-    );
-  }
 
   searchOrder() {
     // Thực hiện tìm kiếm đơn hàng dựa trên searchCode
-    console.log('Search order function. Search code:', this.searchCode);
+    console.log('Search order function. Search code:');
     // Logic tìm kiếm đơn hàng và cập nhật danh sách orders nếu cần
+  }
+
+  inHere() {
+    console.log('Hang o day (fetch)');
+    // this.fetchOrders()
+    this.orders = []
+    console.log(this.auth.getServiceAddressId())
+    this.orderService.getOListOrderHere(this.auth.getServiceAddressId()).subscribe(
+      (orders: Order[]) => {
+        this.orders = orders
+        console.log("hi  "+ orders);
+      },
+      (error) => {
+        console.log("loi roi huhuuuu");
+        console.error(error);
+      }
+    )
+  }
+
+  forword() {
+    console.log('Hang vua chuyen di');
+    this.orders = []
+    this.orderService.getOListOrderMove(this.auth.getServiceAddressId()).subscribe(
+      (orders: Order[]) => {
+        this.orders = orders
+        console.log("hi  "+ orders);
+      },
+      (error) => {
+        console.log("loi roi huhuuuu");
+        console.error(error);
+      }
+    )
+  }
+
+  begin() {
+    console.log('Hang sap toi');
+    this.orders = []
+    this.orderService.getOListOrderComing(this.auth.getServiceAddressId()).subscribe(
+      (orders: Order[]) => {
+        this.orders = orders
+        console.log("hi  "+ orders);
+      },
+      (error) => {
+        console.log("loi roi huhuuuu");
+        console.error(error);
+      }
+    )
   }
 }

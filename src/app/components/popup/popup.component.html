@@ -3,16 +3,27 @@
       <h2>Tạo tài khoản nhân viên</h2>
       <form>
         <div class="input-group">
-          <label for="username">Tài khoản:</label>
-          <input type="text" id="username" name="username">
+          <label for="username">Tên:</label>
+          <input type="text" id="username" name="username" [(ngModel)]="registerData.username">
         </div>
-  
         <div class="input-group">
-          <label for="password">Mật khẩu:</label>
-          <input type="password" id="password" name="password">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" [(ngModel)]="registerData.email">
+        </div>
+        <div class="input-group">
+          <label for="username">Mật khẩu:</label>
+          <input type="text" id="username" name="password" [(ngModel)]="registerData.password">
+        </div>
+        <div class="input-group">
+          <label for="rePassword">TNhập lại mật khẩu:</label>
+          <input type="text" id="rePassword" name="rePassword" [(ngModel)]="registerData.rePassword">
+        </div>
+        <div class="input-group">
+          <label for="phone_number">Số điện thoại:</label>
+          <input type="text" id="phone_number" name="phone_number" [(ngModel)]="registerData.phone_number">
         </div>
   
-        <button type="submit">Tạo tài khoản</button>
+        <button type="submit" (click)="regis()">Tạo tài khoản</button>
       </form>
     </div>
   </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
 import { Order } from '../../model/user';
-import { AuthInterceptor } from '../../auth.interceptor';
+import { AuthInterceptor } from '../../intercepter/auth.interceptor';
 import { AuthService } from '../../services/auth.service';
 
 @Component({

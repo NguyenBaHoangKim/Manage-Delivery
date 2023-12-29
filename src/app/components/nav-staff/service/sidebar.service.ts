@@ -14,7 +14,7 @@ export class SidebarService {
         id: 1,
         title: 'Dashboard',
         iconStr: 'dashboard',
-        path:"",
+        path:"/dashboard",
       },
       {
         id: 2,
