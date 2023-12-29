@@ -40,6 +40,11 @@ export class OrderService {
     return this.http.get<Order[]>(url);
   }
   
+  getOrderDone(orderId: string): Observable<string> {
+    const url = `${environment.baseUrl}/api/v1/manager/done/${orderId}`;
+    return this.http.get<string>(url);
+  }
+
   getOrdersTest(): Observable<Order[]> {
     console.log('dang test get order')
     return this.http.get<Order[]>(`${environment.baseUrl}/order`,{
