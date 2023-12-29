@@ -30,7 +30,7 @@ import {SidebarMenuItemUser, SidebarServiceUser} from "./service/sidebar.service
   ]
 })
 export class NavStaffComponent {
-  codeId: number = 1
+  codeId : string = "user"
   menus: SidebarMenuItem[] = []
   role: String = ''
   private userRoles: string[] = ['boss', 'pointManager', 'serviceManager', 'serviceStaff', 'pointStaff'];
@@ -39,7 +39,7 @@ export class NavStaffComponent {
 
   constructor(private sidebarService: SidebarService,
               private router: Router){
-    this.sidebarService.getSidebarMenu(7).subscribe(
+    this.sidebarService.getSidebarMenu(this.codeId).subscribe(
       data => this.menus = data
     )
   }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import {AuthService} from "../../../services/auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class SidebarService {
 
   constructor() { }
 
-  getSidebarMenu(codeId : number) {
-    if(codeId == 1) { //all
+  getSidebarMenu(codeId : string) {
+    if(codeId == "all") { //all
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -86,24 +87,7 @@ export class SidebarService {
       ]
       return of(menu)
     }
-    else if(codeId == 2){ //nguoi dung
-      let menu: SidebarMenuItem[] = [
-        {
-          id: 1,
-          title: 'Dashboard',
-          iconStr: 'dashboard',
-          path:"/dashboard",
-        },
-        {
-          id: 6,
-          title: 'Tìm kiếm đơn hàng',
-          iconStr: 'search',
-          path:"/search"
-        },
-      ]
-      return of(menu)
-    }
-    else if(codeId == 3){ // nhan vien buu cuc
+    else if(codeId[0] == 'N' && codeId[1] == 'V'){ // nhan vien buu cuc
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -150,7 +134,7 @@ export class SidebarService {
       ]
       return of(menu)
     }
-    else if(codeId == 4) { //quan li buu cuc
+    else if(codeId[0] == 'Q' && codeId[1] == 'L') { //quan li buu cuc
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -173,7 +157,7 @@ export class SidebarService {
       ]
       return of(menu)
     }
-    else if(codeId == 5) { //NV kho
+    else if(codeId[0] == "N" && codeId[1] == "V" && codeId[2] == 'K' ) { //NV kho
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -208,7 +192,7 @@ export class SidebarService {
       ]
       return of(menu)
     }
-    else if(codeId == 6) { //quan li kho
+    else if(codeId[0] == 'Q' && codeId[1] == 'L' && codeId[2] == 'K') { //quan li kho
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -231,7 +215,7 @@ export class SidebarService {
       ]
       return of(menu)
     }
-    else{ //boss
+    else if(codeId == "BOSS"){ //boss
       let menu: SidebarMenuItem[] = [
         {
           id: 1,
@@ -250,6 +234,23 @@ export class SidebarService {
           title: 'Quản lý tổng kho',
           iconStr: 'settings_accessibility',
           path:"/boss-manager"
+        },
+      ]
+      return of(menu)
+    }
+    else { //nguoi dung
+      let menu: SidebarMenuItem[] = [
+        {
+          id: 1,
+          title: 'Dashboard',
+          iconStr: 'dashboard',
+          path:"/dashboard",
+        },
+        {
+          id: 6,
+          title: 'Tìm kiếm đơn hàng',
+          iconStr: 'search',
+          path:"/search"
         },
       ]
       return of(menu)
