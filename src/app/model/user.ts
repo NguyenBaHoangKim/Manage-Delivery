@@ -44,9 +44,9 @@ export interface ServiceAddress {
 }
 
 export interface OrderReqUpdate {
-  orderId: string,
+  oderId: string,
   status: string,
-  serviceAddressId: string,
+  date: string,
 }
 
 export interface EmployeeInfo {

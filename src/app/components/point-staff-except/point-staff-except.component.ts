@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
-import { Order } from '../../model/user';
+import { Order, OrderReqUpdate } from '../../model/user';
 import { AuthInterceptor } from '../../intercepter/auth.interceptor';
 import { AuthService } from '../../services/auth.service';
 
@@ -9,26 +9,34 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './point-staff-except.component.html',
   styleUrl: './point-staff-except.component.scss'
 })
-export class PointStaffExceptComponent implements OnInit {
-  orders: Order[];
-  constructor(private orderService: OrderService, private auth: AuthService ) {
-    this.orders = []
-    console.log("token: " + auth.getToken())
+export class PointStaffExceptComponent implements OnInit{
+  orderId: string = '';
+  orders: OrderReqUpdate
+
+  constructor(private orderService: OrderService, private auth: AuthService) {
+    this.orders = {
+      oderId: '',
+  status: '',
+  date: '',
+    }
   }
 
-  ngOnInit(): void {
-    this.fetchOrders();
+ngOnInit() {
+}
+
+  updateOrderPosition() {
+    console.log('dang update')
+    this.orderService.orderTrans(this.orderId, this.auth.getServiceAddressId())
+      .subscribe(
+        (updatedOrder: OrderReqUpdate) => {
+          this.orders = updatedOrder
+          console.log('Đơn hàng đã được cập nhật:', updatedOrder);
+        },
+        (error) => {
+          console.error('Lỗi khi cập nhật đơn hàng:', error);
+        }
+      );
   }
 
-  fetchOrders(): void {
-    this.orderService.getOrdersTest().subscribe(
-      (orders: Order[]) => {
-        this.orders = orders
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
 }
 

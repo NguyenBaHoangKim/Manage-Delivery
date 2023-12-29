@@ -33,6 +33,7 @@ export class OdercreationComponent implements OnInit{
     console.log(this.newOrder)
     this.order.postNewOrder(this.newOrder).subscribe(
       (response) => {
+        alert('Tạo đơn hàng thành công <3 ')
         console.log('Order created successfully:', response);
       },
       (error) => {

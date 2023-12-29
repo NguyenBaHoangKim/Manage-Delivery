@@ -78,6 +78,16 @@ export class OrderService {
     );
   }
 
+  orderTransCome(orderId: string, position: string): Observable<OrderReqUpdate> {
+    const params = new HttpParams()
+      .set('orderId', orderId)
+      .set('serviceAddressId', position);
+
+    return this.http.put<OrderReqUpdate>(`${environment.baseUrl}/api/v1/orderStatus/update`, {}, { params }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
   //   return this.http.post<OrderReq>(`${environment.baseUrl}/order`, newOrder, {
   //     headers: new HttpHeaders({

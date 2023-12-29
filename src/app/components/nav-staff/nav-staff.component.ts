@@ -42,6 +42,7 @@ export class NavStaffComponent {
               private router: Router,
               private auth : AuthService){
     this.sidebarService.getSidebarMenu(this.auth.getCodeId()).subscribe(
+
       data => this.menus = data
     )
   }
@@ -61,6 +62,7 @@ export class NavStaffComponent {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.setItem('codeId','userrrrrrrr')
     this.router.navigate(['/log-in'])
   }
 }

@@ -4,8 +4,8 @@
       <h2>Xuất đơn hàng đến người dùng</h2>
   
       <div class="head">
-        <input type="text" id="searchInput" placeholder="Nhập tên tài khoản">
-        <button class="button"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
+        <input type="text" id="searchInput" placeholder="Nhập tên tài khoản" [(ngModel)]="id">
+        <button class="button"><span class="material-symbols-outlined" (click)="fetchdata()">search</span>Xác nhận</button>
       </div>
       
       <div class="tracking-info"><table>

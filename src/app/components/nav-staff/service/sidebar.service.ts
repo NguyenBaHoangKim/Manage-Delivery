@@ -97,25 +97,25 @@ export class SidebarService {
         },
         {
           id: 2,
-          title: 'Xác nhận đơn hàng đi',
+          title: 'Điểm tập kết đến',
           iconStr: 'done',
           path:"/point-staff-except-out"
         },
         {
           id: 3,
-          title: 'Xác nhận đơn hàng đến',
+          title: 'ĐGD đến',
           iconStr: 'done',
           path:"/point-staff-except"
         },
         {
           id: 4,
-          title: 'Chuyển hàng đến điểm giao dịch',
+          title: 'Chuyển đến điểm giao dịch',
           iconStr: 'swap_vert',
           path:"/point-staff-creat"
         },
         {
           id: 5,
-          title: 'Chuyển hàng đến điểm tập kết',
+          title: 'Chuyển đến điểm tập kết',
           iconStr: 'move_group',
           path:"/point-staff-creat-topoint"
         },
@@ -167,25 +167,25 @@ export class SidebarService {
         },
         {
           id: 2,
-          title: 'Xác nhận đơn hàng đi',
+          title: 'Điểm tập kết đến',
           iconStr: 'done',
           path:"/point-staff-except-out"
         },
         {
           id: 3,
-          title: 'Xác nhận đơn hàng đến',
+          title: 'ĐGD đến',
           iconStr: 'done',
           path:"/point-staff-except"
         },
         {
           id: 4,
-          title: 'Chuyển hàng đến điểm giao dịch',
+          title: 'Chuyển đến điểm giao dịch',
           iconStr: 'swap_vert',
           path:"/point-staff-creat"
         },
         {
           id: 5,
-          title: 'Chuyển hàng đến điểm tập kết',
+          title: 'Chuyển đến điểm tập kết',
           iconStr: 'move_group',
           path:"/point-staff-creat-topoint"
         },

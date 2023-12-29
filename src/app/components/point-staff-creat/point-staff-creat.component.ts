@@ -11,13 +11,13 @@ import { AuthService } from '../../services/auth.service';
 export class PointStaffCreatComponent implements OnInit{
   orderId: string = '';
   position: string = '';
-  orders: OrderReqUpdate 
+  orders: OrderReqUpdate
 
   constructor(private orderService: OrderService, private auth: AuthService) {
     this.orders = {
-      orderId: '',
+      oderId: '',
   status: '',
-  serviceAddressId: '',
+  date: '',
     }
   }
 
