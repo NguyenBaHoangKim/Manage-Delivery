@@ -27,7 +27,7 @@ import { ServiceStaffPopupComponent } from './components/service-staff-popup/ser
 import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
 import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import { AuthInterceptor } from './auth.interceptor';
+import { AuthInterceptor } from './intercepter/auth.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ErrorStateMatcher } from '@angular/material/core';

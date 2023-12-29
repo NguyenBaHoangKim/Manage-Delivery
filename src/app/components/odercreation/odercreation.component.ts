@@ -8,40 +8,30 @@ import { OrderReq } from '../../model/user';
   styleUrl: './odercreation.component.scss'
 })
 export class OdercreationComponent implements OnInit{
-  name1:string=''
-  phone1:string=''
-  address:string=''
-  type:string=''
-  quantity:number = 0
-  weight: number = 0
-  name2:string=''
-  phone2:string=''
-  des:string=''
-
-  newOrder: OrderReq | undefined
+  newOrder: OrderReq = {
+    namefrom : '',
+    phonefrom : '',
+    name : '',
+    address : '',
+    weight : 0,
+    quantity : 0,
+    nameto : '',
+    phoneto : '',
+    description : '',
+  };
+  // newOrder: OrderReq | undefined
 
 
   constructor(private order:OrderService){
 
   }
   ngOnInit() {
-    this.createNewOrder();
+    // this.createNewOrder();
   }
 
   createNewOrder() {
-    const newOrder: OrderReq = {
-      namefrom : this.name1,
-      phonefrom : this.phone1,
-      name : this.type,
-      address : this.address,
-      weight : this.weight,
-      quantity : this.quantity,
-      nameto : this.name2,
-      phoneto : this.phone2,
-      description : this.des,
-    };
-    console.log(newOrder)
-    this.order.postNewOrder(newOrder).subscribe(
+    console.log(this.newOrder)
+    this.order.postNewOrder(this.newOrder).subscribe(
       (response) => {
         console.log('Order created successfully:', response);
       },

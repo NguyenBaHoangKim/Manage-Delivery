@@ -2,28 +2,28 @@
     <div class="container">
         <h1>Tạo đơn hàng</h1>
         <div id="tracking-form">
-            <form>
-                <input class="input" type="text" placeholder="Tên người gửi..." [(ngModel)]="name1">
-                <input class="input" type="text" placeholder="Số điện thoại..." [(ngModel)]="phone1">
-                <input class="input" list="types" type="text" placeholder="Loại hàng hóa..." [(ngModel)]="type">
+            <!-- <form> -->
+                <input class="input" type="text" placeholder="Tên người gửi..." [(ngModel)]="newOrder.namefrom">
+                <input class="input" type="text" placeholder="Số điện thoại..." [(ngModel)]="newOrder.phonefrom">
+                <input class="input" list="types" type="text" placeholder="Loại hàng hóa..." [(ngModel)]="newOrder.name">
                 <datalist id="types">
                     <option value="Hàng hóa"></option>
                     <option value="Giấy tờ"></option>
                 </datalist>      
-                <input class="input" type="text" placeholder="Địa điểm..." [(ngModel)]="address">          
-                <input class="input" type="text" placeholder="Cân nặng..." [(ngModel)]="weight">
-                <input class="input" list="types1" type="text" placeholder="Số lượng..." [(ngModel)]="quantity">
+                <input class="input" type="text" placeholder="Địa điểm..." [(ngModel)]="newOrder.address">          
+                <input class="input" type="text" placeholder="Cân nặng..." [(ngModel)]="newOrder.weight">
+                <input class="input" list="types1" type="text" placeholder="Số lượng..." [(ngModel)]="newOrder.quantity">
                 <datalist id="types1" >
                     <option value=1></option>
                     <option value=2></option>
                     <option value=3></option>
                     <option value=4></option>
                 </datalist>    
-                <input class="input" type="text" placeholder="Tên người nhận..." [(ngModel)]="name2">
-                <input class="input" type="text" placeholder="Số điện thoại người nhận..." [(ngModel)]="phone2">
-                <textarea  placeholder="Mô tả..." rows="4" [(ngModel)]="des"></textarea>
+                <input class="input" type="text" placeholder="Tên người nhận..." [(ngModel)]="newOrder.nameto">
+                <input class="input" type="text" placeholder="Số điện thoại người nhận..." [(ngModel)]="newOrder.phoneto">
+                <textarea  placeholder="Mô tả..." rows="4" [(ngModel)]="newOrder.description"></textarea>
                 <div class="head"><button class="button" (click)="submit()">Xác nhận</button></div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 </div>

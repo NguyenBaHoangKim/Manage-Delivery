@@ -73,11 +73,33 @@ export class OrderService {
     );
   }
 
+  // postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
+  //   return this.http.post<OrderReq>(`${environment.baseUrl}/order`, newOrder, {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   });
+  // }
+
   postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
-    return this.http.post<OrderReq>(`${environment.baseUrl}/order`, newOrder, {
+    const params = new HttpParams()
+      .set('namefrom', newOrder.namefrom)
+      .set('phonefrom', newOrder.phonefrom)
+      .set('name', newOrder.name)
+      .set('address', newOrder.address)
+      .set('weight', newOrder.weight)
+      .set('quantity', newOrder.quantity)
+      .set('nameto', newOrder.nameto)
+      .set('phoneto', newOrder.phoneto)
+      .set('description', newOrder.description);
+  
+    const url = `${environment.baseUrl}/order`;
+    
+    return this.http.post<OrderReq>(url, {}, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
+      params: params,
     });
   }
 

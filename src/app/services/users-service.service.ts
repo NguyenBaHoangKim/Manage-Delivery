@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
-import { User, Login, Register } from '../model/user';
+import { User, Login, Register, LoginResp } from '../model/user';
 import { environment } from '../../enviroment/enviroment';
 
 @Injectable({
@@ -25,30 +25,26 @@ export class UsersServiceService {
     return this.http.get<User[]>(this.URL)
   }
 
-login(username: string, password: string): Observable<Login> {
+  login(loginData: Login): Observable<LoginResp> {
     const body: Login = {
-      email: username,
-      password: password,
+      email: loginData.email,
+      password: loginData.password,
     };
-
-    return this.http.post<Login>(`${this.URL}`, body, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
+    console.log(body)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
     });
-  }
 
+    return this.http.post<LoginResp>(`${environment.baseUrl}/api/v1/user/login`, body, { headers }).pipe(
+      catchError(this.handleError)
+    );
+  }
   private handleError(error: any): Observable<any> {
     console.error('An error occurred:', error);
     return new Observable<any>();
   }
 
   register(register: Register, serviceAddressid: string): Observable<Register> {
-    if (!register.codeid) {
-      console.error('Invalid codeid:', register.codeid);
-      return new Observable<Register>(); // Hoặc xử lý lỗi theo cách bạn muốn
-    }
-
     const params = new HttpParams()
       .set('codeid', register.codeid)
       .set('username', register.username)

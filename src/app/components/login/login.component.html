@@ -13,7 +13,7 @@
             <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                     placeholder="Ex. pat@example.com" [(ngModel)]="username">
+                     placeholder="Ex. pat@example.com" [(ngModel)]="loginData.email"> {{loginData.email}}
               <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Please enter a valid email address</mat-error>
               }
@@ -24,7 +24,7 @@
             <mat-form-field class="example-full-width">
               <mat-label>Password</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                     placeholder="Ex. pat@example.com" [(ngModel)]="password">
+                     placeholder="Ex. pat@example.com" [(ngModel)]="loginData.password">
               <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Please enter Password</mat-error>
               }
@@ -33,7 +33,7 @@
               } -->
             </mat-form-field>
           </form>
-           <button class="button" (click)="login">Đăng nhập</button>
+           <button class="button" (click)="loginUser()">Đăng nhập</button>
           
     </div>
     <img src="/assets/linhtinh.png" alt="" >
