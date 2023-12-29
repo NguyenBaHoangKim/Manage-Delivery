@@ -12,7 +12,7 @@ import { User } from '../../model/user';
 export class HeaderpointaccountComponent {
 
   constructor(private dialogRef: MatDialog, private user:UsersServiceService) {}
-  user: User[] = [];
+  users: User[] = [];
   openPopup(): void {
     console.log("được rồi nề")
     this.dialogRef.open(PopupComponent, {
@@ -24,7 +24,7 @@ export class HeaderpointaccountComponent {
   getlist(){
     this.user.getListUser().subscribe(
       (orders: User[]) => {
-        this.user[] = orders
+        this.users = orders
         console.log("hi  "+ orders);
       },
       (error) => {
