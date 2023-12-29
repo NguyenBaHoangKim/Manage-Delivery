@@ -18,6 +18,7 @@ import { ServiceStaffExportCustomerComponent } from './components/service-staff-
 
 const routes: Routes = [
   { path: '', component: BossManagerComponent },
+  { path: 'exccept', component: ServiceStaffExportCustomerComponent },
   { path: 'final', component: ServiceStaffExportCustomerComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'search', component: SearchingComponent},
@@ -33,7 +34,7 @@ const routes: Routes = [
   { path: 'log-in', component: LoginComponent},
   { path: 'boss-manager', component: BossManagerComponent},
   { path: '**', component: PageNotFoundComponent},
-  
+
 
 ];
 
