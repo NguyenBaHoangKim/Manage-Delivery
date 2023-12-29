@@ -11,22 +11,20 @@
       <table class="order-table">
         <thead>
           <tr>
-            <th>STT</th>
             <th>Mã đơn hàng</th>
-            <th>Tên đơn hàng</th>
-            <th>Thời gian</th>
             <th>Trạng thái đơn hàng</th>
+            <th>Thời gian</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let order of orders; let i = index" class="order-info">
-            <td>{{ i + 1 }}</td>
-            <td>{{ order.name }}</td>
-            <td>{{ order.address }}</td>
-            <td>{{ order.oderDate }}</td>
-            <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
+          <tr 
+          class="order-info">
+            <td>{{ orders.orderId }}</td>
+            <td>{{ orders.status }}</td>
+            <td>{{ orders.serviceAddressId }}</td>
+            <!-- <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
               done
-              </span>Shipped</td>
+              </span>Shipped</td> -->
           </tr>
         </tbody>
       </table>

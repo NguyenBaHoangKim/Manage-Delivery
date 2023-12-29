@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
-import { OrderReqUpdate } from '../../model/user';
+import { Order, OrderReqUpdate } from '../../model/user';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-point-staff-creat-topoint',
@@ -10,10 +11,14 @@ import { OrderReqUpdate } from '../../model/user';
 export class PointStaffCreatTopointComponent implements OnInit{
   orderId: string = '';
   position: string = '';
+  orders: Order[];
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService, private auth: AuthService) {
+    this.orders = []
+  }
 
 ngOnInit() {
+// this.updateOrderPosition('1ff0a690-a350-11ee-8028-c1aef4fbdbdd','BCTX01')
 }
 
   updateOrderPosition() {
@@ -28,5 +33,17 @@ ngOnInit() {
           console.error('Lỗi khi cập nhật đơn hàng:', error);
         }
       );
+
+      this.orderService.getOListOrderMove(this.auth.getServiceAddressId()).subscribe(
+        (orders: Order[]) => {
+          this.orders = orders
+          console.log("hi  "+ orders);
+        },
+        (error) => {
+          console.log("loi roi huhuuuu");
+          console.error(error);
+        }
+      )
   }
+
 }

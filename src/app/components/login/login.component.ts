@@ -32,7 +32,11 @@ export class LoginComponent {
       (result) => {
         console.log('Đăng nhập thành công', result);
         this.auth.setToken(result.accessKey)
-        this.auth.setServiceAddressId(result.user.serviceAddressId)
+        
+        console.log(result.user.serviceAddressid)
+        this.auth.setServiceAddressId(result.user.serviceAddressid)
+
+        console.log(result)
 
         console.log(this.auth.getToken())
         console.log(this.auth.getServiceAddressId())

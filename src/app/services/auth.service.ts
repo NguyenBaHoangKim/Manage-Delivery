@@ -10,7 +10,8 @@ export class AuthService {
   }
 
   setServiceAddressId(serviceId: string): void {
-    localStorage.setItem('serviceId', serviceId)
+    console.log('sơ vịt a đờ rẹt id'+serviceId)
+    localStorage.setItem('serviceId', serviceId);
   }
 
   getServiceAddressId() : string{
@@ -30,23 +31,10 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    let tokenString = localStorage.getItem('token');
-
-if (tokenString !== null && tokenString !== undefined) {
-  let token = JSON.parse(tokenString);
-  // Bây giờ bạn có thể sử dụng biến 'token' mà không gặp lỗi
-} else {
-  console.error('Giá trị token từ localStorage là null hoặc undefined.');
-}
+    let token = localStorage.getItem('token');
     // let token: string = "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyIjp7ImlkIjoiM2QzMWYyZDctYTU3ZS0xMWVlLWE2NDUtM2JlZTFmM2M5M2JlIiwiY29kZWlkIjoiUUwwNiIsInNlcnZpY2VBZGRyZXNzaWQiOiJLSDAxIiwidXNlcm5hbWUiOiJLaWVuIiwiZW1haWwiOiJxbDA3QGdtYWlsLmNvbSIsInBob25lX251bWJlciI6IjEyMzQ1Njc4OTAifSwic3ViIjoicWwwN0BnbWFpbC5jb20iLCJpYXQiOjE3MDM4MzUwMTcsImV4cCI6MTcwMzkyMTQxN30.7PTelesKvVd4knxxU2FIB4piE3bk1Na6MuBpLka7J8c5CjeLTJUwdHPTtvT9QKLk"
 
-
-    if (tokenString !== null) {
-      console.log(tokenString)
-      // token = JSON.parse(token);
-    }
-
-    return tokenString;
+    return token;
   }
 
   clean(): void {

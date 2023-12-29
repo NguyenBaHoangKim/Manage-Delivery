@@ -2,8 +2,8 @@ import { LoginComponent } from "../components/login/login.component";
 
 export interface User {
   id: number;
-  codeId: string,
-  serviceAddressId: string,
+  codeid: string,
+  serviceAddressid: string,
   username: string;
   email: string;
   phone_number: string;
@@ -45,6 +45,7 @@ export interface ServiceAddress {
 
 export interface OrderReqUpdate {
   orderId: string,
+  status: string,
   serviceAddressId: string,
 }
 

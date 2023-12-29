@@ -75,4 +75,8 @@ export class NavStaffComponent {
   optionIdentity(index: number, value: SidebarMenuItem) {
     return value.id
   }
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/log-in'])
+  }
 }
