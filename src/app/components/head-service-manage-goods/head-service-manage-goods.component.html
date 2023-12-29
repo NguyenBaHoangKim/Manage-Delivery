@@ -9,7 +9,7 @@
       </div>
 
       <div class="head">
-        <button class="button" (click)="inHere()"><span class="material-symbols-outlined">inventory_2</span>Trong kho</button>
+        <button class="button" (click)="inHere()" style="margin-left: 0;"><span class="material-symbols-outlined">inventory_2</span>Trong kho</button>
         <button class="button" (click)="forword()"><span class="material-symbols-outlined">assignment_turned_in</span>Đã chuyển</button>
         <button class="button" (click)="begin()"><span class="material-symbols-outlined">local_shipping</span>Sắp tới</button>
       </div>
@@ -32,7 +32,7 @@
                 <td>{{ order.address }}</td>
                 <td>{{ order.weight }}</td>
                 <td>{{ order.quantity }}</td>
-                <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
+                <td><span style="color: green;" class="material-symbols-outlined">
                   done
                   </span>Shipped</td>
               </tr>
