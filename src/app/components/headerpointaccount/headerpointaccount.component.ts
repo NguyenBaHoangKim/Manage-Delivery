@@ -1,41 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component'; // Đường dẫn đến PopupComponent
+import { UsersServiceService } from '../../services/users-service.service';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-headerpointaccount',
   templateUrl: './headerpointaccount.component.html',
   styleUrls: ['./headerpointaccount.component.scss']
 })
-export class HeaderpointaccountComponent {
+export class HeaderpointaccountComponent implements OnInit{
 
-  constructor(private dialogRef: MatDialog) {}
-  accounts: any[] = [
-    {
-      employeeId: 'E123',
-      fullName: 'Nguyen Van A',
-      email: 'user1@example.com',
-      phone: '012345678'
-    },
-    {
-      employeeId: 'E124',
-      fullName: 'Tran Thi B',
-      email: 'user2@example.com',
-      phone: '012345678'
-    },
-    {
-      employeeId: 'E125',
-      fullName: 'Le Van C',
-      email: 'user3@example.com',
-      phone: '012345678'
-    },
-    // Thêm các tài khoản khác vào đây
-  ];
+  constructor(private dialogRef: MatDialog, private user:UsersServiceService) {}
+  users: User[] = [];
   openPopup(): void {
     console.log("được rồi nề")
     this.dialogRef.open(PopupComponent, {
       width: '600px',
       data: {}
     });
+  }
+
+  ngOnInit() {
+    this.getlist()
+  }
+
+  getlist(){
+    this.user.getListUser().subscribe(
+      (orders: User[]) => {
+        this.users = orders
+        console.log("hi  "+ orders);
+      },
+      (error) => {
+        console.log("loi roi huhuuuu");
+        console.error(error);
+      }
+    )
   }
 }

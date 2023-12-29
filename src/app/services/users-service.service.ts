@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { User, Login, Register } from '../model/user';
 import { environment } from '../../enviroment/enviroment';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,14 @@ export class UsersServiceService {
 
   userList: User[];
 
-  constructor(private http : HttpClient){
+  constructor(private http : HttpClient, private auth:AuthService){
     this.userList = []
   }
 
   ngOnInit() :void {
-    this.getListUser()
+    // this.getListUser()
   }
 
-  getListUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.URL)
-  }
 
 login(username: string, password: string): Observable<Login> {
     const body: Login = {
@@ -49,6 +47,7 @@ login(username: string, password: string): Observable<Login> {
       return new Observable<Register>(); // Hoặc xử lý lỗi theo cách bạn muốn
     }
 
+
     const params = new HttpParams()
       .set('codeid', register.codeid)
       .set('username', register.username)
@@ -64,6 +63,10 @@ login(username: string, password: string): Observable<Login> {
     return this.http.post<Register>(url, {}, { params }).pipe(
       catchError(this.handleError)
     );
+  }
+  getListUser(): Observable<User[]> {
+    const url = `${environment.baseUrl}/api/v1/user/employee/KH02`;
+    return this.http.get<User[]>(url);
   }
 
   // register(register: Register, serviceAddressid: string): Observable<Register> {
