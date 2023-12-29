@@ -1,18 +1,42 @@
 import { Component } from '@angular/core';
 import { SidebarMenuItem, SidebarService } from './service/sidebar.service';
+import {animate, state, style, transition, trigger} from "@angular/animations";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav-staff',
   templateUrl: './nav-staff.component.html',
-  styleUrl: './nav-staff.component.scss'
+  styleUrl: './nav-staff.component.scss',
+  animations: [
+    trigger('openCloseNav', [
+      state('true', style({
+        width: '300px',
+      })),
+      state('false', style({
+        width: '60px',
+      })),
+      transition('false => true', [animate('400ms ease-in-out')]),
+      transition('true => false', [animate('400ms ease-out')]),
+    ]),
+    trigger('openCloseNavContent', [
+      state('true', style({
+        opacity: 1,
+      })),
+      state('false', style({
+        opacity: 0,
+      })),
+    ]),
+  ]
 })
 export class NavStaffComponent {
   menus: SidebarMenuItem[] = []
   role: String = ''
   private userRoles: string[] = ['boss', 'pointManager', 'serviceManager', 'serviceStaff', 'pointStaff'];
   selectedMenuItem: SidebarMenuItem | null = null
+  showNav = false
 
-  constructor(private sidebarService: SidebarService){
+  constructor(private sidebarService: SidebarService,
+              private router: Router){
     this.sidebarService.getSidebarMenu().subscribe(
       data => this.menus = data
     )
@@ -20,6 +44,7 @@ export class NavStaffComponent {
 
   onClickItem(item: SidebarMenuItem) {
     this.selectedMenuItem = item
+    this.router.navigate([item.path])
   }
 
   // roleCheck(role: String) {
@@ -45,5 +70,9 @@ export class NavStaffComponent {
 
   checkRole(roleToCheck: string): boolean {
     return this.userRoles.includes(roleToCheck);
+  }
+
+  optionIdentity(index: number, value: SidebarMenuItem) {
+    return value.id
   }
 }
