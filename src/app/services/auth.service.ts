@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor() { 
+
+  }
 
   setServiceAddressId(serviceId: string): void {
     localStorage.setItem('serviceId', serviceId)
@@ -13,7 +15,7 @@ export class AuthService {
 
   getServiceAddressId() : string {
     // let serviceId: string = localStorage.getItem('serviceId')
-    let serviceId: string = 'KH01'
+    let serviceId: string = 'KH02'
     return serviceId;
   }
   
@@ -24,7 +26,7 @@ export class AuthService {
 
   getToken(): string | null {
     // let token = localStorage.getItem('token');
-    let token: string = "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyIjp7ImlkIjoiM2QzMWYyZDctYTU3ZS0xMWVlLWE2NDUtM2JlZTFmM2M5M2JlIiwiY29kZWlkIjoiUUwwNiIsInNlcnZpY2VBZGRyZXNzaWQiOiJLSDAxIiwidXNlcm5hbWUiOiJLaWVuIiwiZW1haWwiOiJxbDA3QGdtYWlsLmNvbSIsInBob25lX251bWJlciI6IjEyMzQ1Njc4OTAifSwic3ViIjoicWwwN0BnbWFpbC5jb20iLCJpYXQiOjE3MDM4MzUwMTcsImV4cCI6MTcwMzkyMTQxN30.7PTelesKvVd4knxxU2FIB4piE3bk1Na6MuBpLka7J8c5CjeLTJUwdHPTtvT9QKLk"
+    let token: string = "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyIjp7ImlkIjoiNWVkNzU3Y2UtYTY0MS0xMWVlLWIzY2YtNmJkNzkzNWQ0YzI4IiwiY29kZWlkIjoiS0gwMiIsInNlcnZpY2VBZGRyZXNzaWQiOiJLSDAxIiwidXNlcm5hbWUiOiJLaWVuIiwiZW1haWwiOiJLaWVuMDIiLCJwaG9uZV9udW1iZXIiOiIxMjM0NTY3ODkwIn0sInN1YiI6IktpZW4wMiIsImlhdCI6MTcwMzg1MTAzNywiZXhwIjoxNzAzOTM3NDM3fQ.GOfnkhkGQ7OMxSpuhWdh5lgJsohs0B4PSMqDUaett56lxEXdR18DVF6EwVzYx4RA"
 
 
     if (token !== null) {

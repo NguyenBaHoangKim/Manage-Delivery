@@ -18,11 +18,11 @@
             <th></th>
         </thead>
         <tbody>
-            <tr *ngFor="let account of accounts">
-                <td>{{ account.employeeId }}</td>
-                <td>{{ account.fullName }}</td>
-                <td>{{ account.email }}</td>
-                <td>{{ account.phone }}</td>
+            <tr *ngFor="let user of user">
+                <td>{{ user.employeeId }}</td>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
                 <td><button class="delete-button">Xóa</button></td>
             </tr>
         </tbody>

@@ -1,10 +1,13 @@
 import { LoginComponent } from "../components/login/login.component";
 
 export interface User {
-  id: number;
-  username: string;
-  email: string;
-  phone: string;
+
+        id: string;
+        codeid: string;
+        serviceAddressid: string; 
+        username: string;
+        email: string;
+        phone_number: string;
 }
 
 export interface Order {
@@ -77,10 +80,10 @@ export interface Login{
 export interface Register{
   codeid:string,
   username:string,
-  email:string
-  password:string
-  rePassword:string
-  phone_number:string
+  email:string;
+  password:string;
+  rePassword:string;
+  phone_number:string;
 }
 
 export interface OrderStatus{
