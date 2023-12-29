@@ -11,7 +11,9 @@ export class BossManagerComponent {
   data: BossRes[]
 
   constructor(private boss: BossManagerService){
-    this.data = []
+    this.data = [
+      
+    ]
   }
 
   ngOnInit() :void {

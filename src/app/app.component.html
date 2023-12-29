@@ -1,6 +1,6 @@
 <div class="layout-container">
-    <app-nav-staff></app-nav-staff>
-    <div class="content">
+    <app-nav-staff *ngIf="showNav"></app-nav-staff>
+    <div class="content" style="margin-left: 60px;">
         <router-outlet></router-outlet>
     </div>
 
