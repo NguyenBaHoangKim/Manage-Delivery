@@ -2,41 +2,53 @@ $leftbar: #ddddda;
 $hover: #4a707a;
 $logo: #4a707a;
 
+app-login {
+  height: 100%;
+}
 
 .container{
-    height: 90%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
     display: flex;
-    justify-content: center; /* Canh giữa theo chiều ngang */
-    align-items: center; 
-    flex-direction: row;
+    justify-content: stretch;
+    // flex-direction: row;
 }
 
 .background-container{
     background-color: #4a707a;
     overflow: hidden;
-    width: 60%;
+    height: 100%;
+    max-height: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ddddda;
     .background-image {
-        height: 80%;
+        height: 400px;
         object-fit: cover; /* Đảm bảo ảnh nằm đúng vị trí */
     }
    
 }
 
+.login-container{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form{
-    height: 400px;
+    height: auto;
     padding: 10px;
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction:column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     border-radius: 20px;
-
     .logo {
         height: 100px;
         padding: 20px;

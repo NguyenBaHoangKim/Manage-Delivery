@@ -18,8 +18,7 @@ export class AuthService {
 
   getToken(): string | null {
     // let token = localStorage.getItem('token');
-    let token: string = "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyIjp7ImlkIjoiNzQ3Y2ZiZjAtYTU2Mi0xMWVlLTliZGUtMTljYWI2NjIzNzI3IiwiY29kZWlkIjoiUUwwNiIsInNlcnZpY2VBZGRyZXNzaWQiOiJLSDAyIiwidXNlcm5hbWUiOiJLaWVuIiwiZW1haWwiOiJxbDA3QGdtYWlsLmNvbSIsInBob25lX251bWJlciI6IjEyMzQ1Njc4OTAifSwic3ViIjoicWwwN0BnbWFpbC5jb20iLCJpYXQiOjE3MDM3NTgyNzgsImV4cCI6MTcwMzg0NDY3OH0.88S1FRCijqRlaARuUr007SgtxKfg29mwKPWMjwgs_7E4g0w8gfB-IE9QluaZUKXq"
-
+    let token: string = "eyJhbGciOiJIUzM4NCJ9.eyJ1c2VyIjp7ImlkIjoiMmMxNmYyMjYtYTU5Ny0xMWVlLWE2NzYtNTkxNWUzOGNiNTFkIiwiY29kZWlkIjoiS0gwMSIsInNlcnZpY2VBZGRyZXNzaWQiOiJLSDAxIiwidXNlcm5hbWUiOiJLaWVuIiwiZW1haWwiOiJLaWVubiIsInBob25lX251bWJlciI6IjEyMzQ1Njc4OTAifSwic3ViIjoiS2llbm4iLCJpYXQiOjE3MDM4MzM2MDksImV4cCI6MTcwMzkyMDAwOX0.omk8KnVUOW41rYPr-bYg14y-nMI_Ac7WSM29tsAClkf4kve2QybbUpFh6xcaMqTM"  
     if (token !== null) {
       console.log(token)
       // token = JSON.parse(token);
