@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component'; // Đường dẫn đến PopupComponent
 import { UsersServiceService } from '../../services/users-service.service';
@@ -9,7 +9,7 @@ import { User } from '../../model/user';
   templateUrl: './headerpointaccount.component.html',
   styleUrls: ['./headerpointaccount.component.scss']
 })
-export class HeaderpointaccountComponent {
+export class HeaderpointaccountComponent implements OnInit{
 
   constructor(private dialogRef: MatDialog, private user:UsersServiceService) {}
   users: User[] = [];
@@ -19,6 +19,10 @@ export class HeaderpointaccountComponent {
       width: '600px',
       data: {}
     });
+  }
+
+  ngOnInit() {
+    this.getlist()
   }
 
   getlist(){

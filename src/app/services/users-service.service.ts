@@ -65,7 +65,7 @@ login(username: string, password: string): Observable<Login> {
     );
   }
   getListUser(): Observable<User[]> {
-    const url = `${environment.baseUrl}/api/v1/user/employee/KH02/${this.auth.getServiceAddressId()}`;
+    const url = `${environment.baseUrl}/api/v1/user/employee/KH02`;
     return this.http.get<User[]>(url);
   }
 
