@@ -14,9 +14,11 @@ import { OdercreationComponent } from './components/odercreation/odercreation.co
 import { LoginComponent } from './components/login/login.component';
 import { BossManagerComponent } from './components/boss-manager/boss-manager.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ServiceStaffExportCustomerComponent } from './components/service-staff-export-customer/service-staff-export-customer.component';
 
 const routes: Routes = [
   { path: '', component: BossManagerComponent },
+  { path: 'final', component: ServiceStaffExportCustomerComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'search', component: SearchingComponent},
   { path: 'point-staff-except-out', component: PointStaffExceptOutComponent },
@@ -31,6 +33,7 @@ const routes: Routes = [
   { path: 'log-in', component: LoginComponent},
   { path: 'boss-manager', component: BossManagerComponent},
   { path: '**', component: PageNotFoundComponent},
+  
 
 ];
 

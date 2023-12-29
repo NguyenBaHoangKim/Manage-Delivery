@@ -1,5 +1,5 @@
 <div class="layout-container">
-    <app-nav-staff></app-nav-staff>
+    <app-nav-staff *ngIf="showNav"></app-nav-staff>
     <div class="content">
         <router-outlet></router-outlet>
     </div>

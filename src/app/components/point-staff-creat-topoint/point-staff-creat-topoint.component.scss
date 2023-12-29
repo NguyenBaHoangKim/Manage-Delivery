@@ -102,12 +102,11 @@ $background: #f4f4f4;
     text-align: center;
     padding: 0 25px;
     position: relative;
-    margin: 5px;
     cursor: pointer;
     -webkit-transition: .2s linear;
     transition: all .2s linear 0s;
     outline: 0!important;
-    
+    justify-content: center;
     display: flex;
     flex-direction: row;
     align-items: center;
