@@ -2,8 +2,8 @@
     <div class="container">
         <h1>Tra cứu Mã Vận Đơn</h1>
         <div class="tracking-form">
-            <input class="input" type="text" placeholder="Nhập mã vận đơn...">
-            <button class="button"> Tra cứu </button>
+            <input class="input" type="text" placeholder="Nhập mã vận đơn..." [(ngModel)]="orderId">
+            <button class="button" (click)="fetchOrderStatus()"> Tra cứu </button>
         </div>
 
         <div class="tracking-info">

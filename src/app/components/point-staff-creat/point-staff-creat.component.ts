@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
-import { Order } from '../../model/user';
+import { Order, OrderReqUpdate } from '../../model/user';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-point-staff-creat',
@@ -10,8 +11,11 @@ import { Order } from '../../model/user';
 export class PointStaffCreatComponent implements OnInit{
   orderId: string = '';
   position: string = '';
+  orders: Order[];
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService, private auth: AuthService) {
+    this.orders = []
+  }
 
 ngOnInit() {
 // this.updateOrderPosition('1ff0a690-a350-11ee-8028-c1aef4fbdbdd','BCTX01')
@@ -21,12 +25,25 @@ ngOnInit() {
     console.log('dang update')
     this.orderService.orderTrans(this.orderId, this.position)
       .subscribe(
-        (updatedOrder: Order) => {
+        (updatedOrder: OrderReqUpdate) => {
+          
           console.log('Đơn hàng đã được cập nhật:', updatedOrder);
         },
         (error) => {
           console.error('Lỗi khi cập nhật đơn hàng:', error);
         }
       );
+
+      this.orderService.getOListOrderMove(this.auth.getServiceAddressId()).subscribe(
+        (orders: Order[]) => {
+          this.orders = orders
+          console.log("hi  "+ orders);
+        },
+        (error) => {
+          console.log("loi roi huhuuuu");
+          console.error(error);
+        }
+      )
   }
+
 }

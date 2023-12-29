@@ -7,19 +7,26 @@
         <button class="button" (click)="updateOrderPosition()"> Xuất hàng </button>
     </div>
 
-    <div class="tracking-info"><table>
+    <div class="tracking-info">
+      <table class="order-table">
         <thead>
           <tr>
-            <th>Mã vận đơn</th>
-            <th>Vị trí đến</th>
-            <th>Trạng thái</th>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Tên đơn hàng</th>
+            <th>Thời gian</th>
+            <th>Trạng thái đơn hàng</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>VD001</td>
-            <td>HCM City</td>
-            <td>Shipped</td>
+          <tr *ngFor="let order of orders; let i = index" class="order-info">
+            <td>{{ i + 1 }}</td>
+            <td>{{ order.name }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.oderDate }}</td>
+            <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
+              done
+              </span>Shipped</td>
           </tr>
         </tbody>
       </table>

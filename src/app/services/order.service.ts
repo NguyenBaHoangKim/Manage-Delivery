@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 import { OrderWithId, EmployeeInfo, Order, OrderReq, OrderReqUpdate } from '../model/user';
 import { environment } from '../../enviroment/enviroment';
 
@@ -13,6 +13,10 @@ export class OrderService {
   listEmployee: EmployeeInfo[]
   listOrder: Order[]
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   constructor(private http : HttpClient){
     this.listEmployee = []
     this.listOrder = []
@@ -21,17 +25,19 @@ export class OrderService {
     this.orderTrans
   }
 
-  getOrdersHere(serviceAddressId: string): Observable<Order[]> {
-    const body = { serviceAddressId: serviceAddressId }; 
+  getOListOrderMove(orderId: string): Observable<Order[]> {
+    const url = `${environment.baseUrl}/api/v1/manager/moving/${orderId}`;
+    return this.http.get<Order[]>(url);
+  }
 
-    const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-      body: body,
-    };
-    console.log(options.body)
-    return this.http.get<Order[]>('http://localhost:8080/api/v1/manager/here', options);
+  getOListOrderComing(orderId: string): Observable<Order[]> {
+    const url = `${environment.baseUrl}/api/v1/manager/coming/${orderId}`;
+    return this.http.get<Order[]>(url);
+  }
+
+  getOListOrderHere(orderId: string): Observable<Order[]> {
+    const url = `${environment.baseUrl}/api/v1/manager/here/${orderId}`;
+    return this.http.get<Order[]>(url);
   }
   
   getOrdersTest(): Observable<Order[]> {
@@ -43,32 +49,36 @@ export class OrderService {
     });
   }
 
-  getOrderWithId(orderId: string): Observable<Order> {
-    const url = `http://localhost:8080/api/v1/orderStatus/${orderId}`;
-    
-    return this.http.get<Order>(url);
+
+
+  getListOrderStatusWithId(orderId: string): Observable<OrderWithId[]> {
+    const url = `http://localhost:8080/api/v1/orderStatus/list/${orderId}`;
+    console.log(orderId)
+    console.log(url)
+    return this.http.get<OrderWithId[]>(url);
   }
 
+  private handleError(error: any): Observable<any> {
+    console.error('An error occurred:', error);
+    return new Observable<any>(); // Hoặc bạn có thể xử lý lỗi theo cách khác nếu cần
+  }
 
- orderTrans(_orderId: string, _position: string): Observable<Order> {
-  const body: OrderReqUpdate = {
-    orderId: _orderId,
-    serviceAddressId: _position,
-  };
-  console.log(body)
-  return this.http.put<Order>(`${environment.baseUrl}/api/v1/orderStatus/update`, body, {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    }),
-  }); 
-}
+  orderTrans(orderId: string, position: string): Observable<OrderReqUpdate> {
+    const params = new HttpParams()
+      .set('orderId', orderId)
+      .set('serviceAddressId', position);
 
-postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
-  return this.http.post<OrderReq>(`http://192.168.1.202:8080/order`, newOrder, {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    }),
-  });
-}
+    return this.http.put<OrderReqUpdate>(`${environment.baseUrl}/api/v1/orderStatus/update`, {}, { params }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  postNewOrder(newOrder: OrderReq): Observable<OrderReq> {
+    return this.http.post<OrderReq>(`${environment.baseUrl}/order`, newOrder, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
+  }
 
 }

@@ -18,13 +18,9 @@ export interface Order {
 }
 
 export interface OrderWithId {
-  id: string,
-  name: String,
-  address: string,
-  weight: number,
-  quantity: number,
-  oderDate: string,
-  oderStatus: string,
+  oderId: string,
+  status: string,
+  date: string,
 }
 
 export interface OrderReq {
@@ -73,9 +69,18 @@ export interface BossRes {
   countOrder: string
 }
 
-export interface login{
+export interface Login{
   email: string;
   password: string;
+}
+
+export interface Register{
+  codeid:string,
+  username:string,
+  email:string
+  password:string
+  rePassword:string
+  phone_number:string
 }
 
 export interface OrderStatus{

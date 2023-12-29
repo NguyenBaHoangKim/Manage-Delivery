@@ -4,7 +4,7 @@
         <h2>Quản lý đơn hàng</h2>
         
       <div class="head">
-        <input type="text" placeholder="Nhập mã đơn hàng">
+        <input type="text" placeholder="Nhập mã đơn hàng" [(ngModel)]="search"> {{search}}
         <button class="button" (click)="searchOrder()"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
       </div>
 
@@ -30,8 +30,8 @@
                 <td>{{ i + 1 }}</td>
                 <td>{{ order.name }}</td>
                 <td>{{ order.address }}</td>
-                <td>{{ order.weight }}</td>
-                <td>{{ order.quantity }}</td>
+                <td>{{ order.oderDate }}</td>
+                <td>{{ order.address }}</td>
                 <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
                   done
                   </span>Shipped</td>

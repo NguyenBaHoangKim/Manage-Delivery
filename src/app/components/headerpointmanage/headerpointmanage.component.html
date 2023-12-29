@@ -4,7 +4,7 @@
       <h2>Quản lý đơn hàng</h2>
       
     <div class="head">
-      <input type="text" placeholder="Nhập mã đơn hàng">
+      <input type="text" placeholder="Nhập mã đơn hàng" [(ngModel)]="search"> {{search}}
       <button class="button" (click)="searchOrder()"><span class="material-symbols-outlined">search</span>Tìm kiếm</button>
     </div>
 
@@ -13,7 +13,6 @@
       <button class="button" (click)="forword()"><span class="material-symbols-outlined">assignment_turned_in</span>Đã chuyển</button>
       <button class="button" (click)="begin()"><span class="material-symbols-outlined">local_shipping</span>Sắp tới</button>
     </div>
-
       <div class="tracking-info">
         <table class="order-table">
           <thead>
@@ -29,11 +28,13 @@
           <tbody>
             <tr *ngFor="let order of orders; let i = index" class="order-info">
               <td>{{ i + 1 }}</td>
-              <td>{{ order.orderId }}</td>
-              <td>{{ order.orderName }}</td>
-              <td>{{ order.time }}</td>
-              <td>{{ order.location }}</td>
-              <td>{{ order.status }}</td>
+              <td>{{ order.name }}</td>
+              <td>{{ order.address }}</td>
+              <td>{{ order.weight }}</td>
+              <td>{{ order.quantity }}</td>
+              <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;"><span style="color: green;" class="material-symbols-outlined">
+                done
+                </span>Shipped</td>
             </tr>
           </tbody>
         </table>
