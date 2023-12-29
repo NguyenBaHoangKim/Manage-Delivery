@@ -11,10 +11,14 @@ import { AuthService } from '../../services/auth.service';
 export class PointStaffCreatTopointComponent implements OnInit{
   orderId: string = '';
   position: string = '';
-  orders: Order[];
+  orders: OrderReqUpdate 
 
   constructor(private orderService: OrderService, private auth: AuthService) {
-    this.orders = []
+    this.orders = {
+      orderId: '',
+  status: '',
+  serviceAddressId: '',
+    }
   }
 
 ngOnInit() {
@@ -26,7 +30,7 @@ ngOnInit() {
     this.orderService.orderTrans(this.orderId, this.position)
       .subscribe(
         (updatedOrder: OrderReqUpdate) => {
-          
+          this.orders = updatedOrder
           console.log('Đơn hàng đã được cập nhật:', updatedOrder);
         },
         (error) => {
@@ -34,16 +38,16 @@ ngOnInit() {
         }
       );
 
-      this.orderService.getOListOrderMove(this.auth.getServiceAddressId()).subscribe(
-        (orders: Order[]) => {
-          this.orders = orders
-          console.log("hi  "+ orders);
-        },
-        (error) => {
-          console.log("loi roi huhuuuu");
-          console.error(error);
-        }
-      )
+      // this.orderService.getOListOrderMove(this.auth.getServiceAddressId()).subscribe(
+      //   (orders: Order[]) => {
+      //     this.orders = orders
+      //     console.log("hi  "+ orders);
+      //   },
+      //   (error) => {
+      //     console.log("loi roi huhuuuu");
+      //     console.error(error);
+      //   }
+      // )
   }
 
 }

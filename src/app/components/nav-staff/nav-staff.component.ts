@@ -39,7 +39,7 @@ export class NavStaffComponent {
 
   constructor(private sidebarService: SidebarService,
               private router: Router){
-    this.sidebarService.getSidebarMenu(7).subscribe(
+    this.sidebarService.getSidebarMenu(1).subscribe(
       data => this.menus = data
     )
   }
@@ -56,7 +56,7 @@ export class NavStaffComponent {
   optionIdentity(index: number, value: SidebarMenuItem) {
     return value.id
   }
-  
+
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/log-in'])

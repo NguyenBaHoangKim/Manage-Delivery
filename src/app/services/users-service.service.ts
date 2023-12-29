@@ -11,6 +11,7 @@ import { AuthService } from './auth.service';
 export class UsersServiceService {
 
   private URL : string = `${environment.baseUrl}`
+  private sevId: string = this.auth.getServiceAddressId()
 
   userList: User[];
 
@@ -59,8 +60,10 @@ export class UsersServiceService {
       catchError(this.handleError)
     );
   }
+
   getListUser(): Observable<User[]> {
-    const url = `${environment.baseUrl}/api/v1/user/employee/KH02`;
+    console.log(this.sevId)
+    const url = `${environment.baseUrl}/api/v1/user/employee/${this.sevId}`;
     return this.http.get<User[]>(url);
   }
 

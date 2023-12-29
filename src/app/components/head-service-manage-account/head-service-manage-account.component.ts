@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { User } from '../../model/user';
+import { PopupComponent } from '../popup/popup.component';
+import { UsersServiceService } from '../../services/users-service.service';
 // import { MatDialog } from '@angular/material/dialog';
 // import { PopupComponent } from '../popup/popup.component'; // Đường dẫn đến PopupComponent
 
@@ -8,34 +12,30 @@ import { Component } from '@angular/core';
   styleUrl: './head-service-manage-account.component.scss'
 })
 export class HeadServiceManageAccountComponent {
-  // constructor(private dialogRef: MatDialog) {}
-  searchCode: string = '';
-  accounts: any[] = [
-    {
-      employeeId: 'E123',
-      fullName: 'Nguyen Van A',
-      email: 'user1@example.com',
-      phone: '012345678'
-    },
-    {
-      employeeId: 'E124',
-      fullName: 'Tran Thi B',
-      email: 'user2@example.com',
-      phone: '012345678'
-    },
-    {
-      employeeId: 'E125',
-      fullName: 'Le Van C',
-      email: 'user3@example.com',
-      phone: '012345678'
-    },
-    // Thêm các tài khoản khác vào đây
-  ];
+  constructor(private dialogRef: MatDialog, private user:UsersServiceService) {}
+  users: User[] = [];
   openPopup(): void {
     console.log("được rồi nề")
-    // this.dialogRef.open(PopupComponent, {
-    //   width: '600px',
-    //   data: {}
-    // });
+    this.dialogRef.open(PopupComponent, {
+      width: '600px',
+      data: {}
+    });
+  }
+
+  ngOnInit() {
+    this.getlist()
+  }
+
+  getlist(){
+    this.user.getListUser().subscribe(
+      (orders: User[]) => {
+        this.users = orders
+        console.log("hi  "+ orders);
+      },
+      (error) => {
+        console.log("loi roi huhuuuu");
+        console.error(error);
+      }
+    )
   }
 }
