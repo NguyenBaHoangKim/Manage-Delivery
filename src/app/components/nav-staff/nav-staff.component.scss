@@ -4,6 +4,7 @@ $logo: #4a707a;
 
 .left-bar {
   font-family: "Arial", sans-serif;
+  position: relative;
 
   .container {
     background-color: $lefbar;
@@ -15,6 +16,7 @@ $logo: #4a707a;
     flex-direction: column;
 
     .logo {
+      height: 90px;
       padding: 20px;
       text-align: center;
       font-size: 20px;
@@ -32,6 +34,11 @@ $logo: #4a707a;
       .magicpost {
         color: $logo; /* Change color if needed */
       }
+
+      .icon-img {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     .logout {
@@ -41,12 +48,17 @@ $logo: #4a707a;
   }
 }
 
+.content {
+  position: absolute;
+}
+
 .item {
   padding: 15px;
   display: flex;
   align-items: center;
   transition: background-color 0.3s ease;
-  
+  overflow-x: hidden;
+
   .material-symbols-outlined {
     margin-right: 10px; /* Adjust spacing if needed */
     font-family: "Material Symbols Outlined", sans-serif;
@@ -69,6 +81,22 @@ $logo: #4a707a;
   .name {
     color: white;
   }
+}
+
+.option-item-icon {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.option-item-title {
+  text-overflow: clip;
+  white-space: nowrap;
+  max-height: 2.2em;
+  width: 200px;
+  overflow: hidden;
 }
 
 .item:hover {
@@ -113,9 +141,8 @@ $logo: #4a707a;
 }
 
 
-  
- 
-  
 
-  
- 
+
+
+
+
