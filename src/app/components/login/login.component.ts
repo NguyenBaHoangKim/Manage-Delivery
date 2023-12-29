@@ -31,15 +31,15 @@ export class LoginComponent {
     this.userService.login(this.loginData).subscribe(
       (result) => {
         console.log('Đăng nhập thành công', result);
+
+        console.log("code id" + result.user.codeid)
+        console.log(this.auth.getCodeId())
+
         this.auth.setToken(result.accessKey)
-        
-        console.log(result.user.serviceAddressid)
+        this.auth.setCodeId(result.user.codeid)
         this.auth.setServiceAddressId(result.user.serviceAddressid)
 
-        console.log(result)
-
-        console.log(this.auth.getToken())
-        console.log(this.auth.getServiceAddressId())
+        
 
         this.router.navigate(['/dashboard'])
       },
