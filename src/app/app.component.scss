@@ -1,17 +1,22 @@
   .layout-container {
+    overflow-y: hidden;
     display: flex;
     height: 100%;
   }
-  
+
   app-navigator {
     width: 200px; /* Độ rộng của navigator */
     background-color: #f4f4f4;
     /* Các thuộc tính khác cho navigator */
   }
-  
+
   .content {
     flex: 1; /* Chiếm phần còn lại của layout */
     //padding: 10px; /* Padding cho phần content */
     /* Các thuộc tính khác cho phần content */
+    overflow-y: auto;
   }
-  
+
+  app-nav-staff {
+    z-index: 100;
+  }

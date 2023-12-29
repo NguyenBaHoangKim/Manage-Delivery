@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { User, Login, Register, LoginResp } from '../model/user';
 import { environment } from '../../enviroment/enviroment';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,14 @@ export class UsersServiceService {
 
   userList: User[];
 
-  constructor(private http : HttpClient){
+  constructor(private http : HttpClient, private auth:AuthService){
     this.userList = []
   }
 
   ngOnInit() :void {
-    this.getListUser()
+    // this.getListUser()
   }
 
-  getListUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.URL)
-  }
 
   login(loginData: Login): Observable<LoginResp> {
     const body: Login = {
@@ -60,6 +58,10 @@ export class UsersServiceService {
     return this.http.post<Register>(url, {}, { params }).pipe(
       catchError(this.handleError)
     );
+  }
+  getListUser(): Observable<User[]> {
+    const url = `${environment.baseUrl}/api/v1/user/employee/KH02/${this.auth.getServiceAddressId()}`;
+    return this.http.get<User[]>(url);
   }
 
   // register(register: Register, serviceAddressid: string): Observable<Register> {

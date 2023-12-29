@@ -17,6 +17,7 @@ $background: #f4f4f4;
 
 .info-box {
   width: 50%;
+  height: 100%;
   padding: 10px;
   box-sizing: border-box;
   background: #fff;
@@ -36,7 +37,7 @@ $background: #f4f4f4;
   flex-direction: column;
   align-items: start;
   padding: 10px 10px;
-  width: 35%;
+  width: 100%;
 
   // box-sizing: border-box;
   // background: #eeeeee;
@@ -72,6 +73,7 @@ input[type="text"] {
   border-radius: 6px;
   -webkit-box-pack: center;
   justify-content: center;
+  margin-left: 10px;
 }
 
 .button {
@@ -92,7 +94,7 @@ input[type="text"] {
   -webkit-transition: .2s linear;
   transition: all .2s linear 0s;
   outline: 0!important;
-  
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -109,6 +111,7 @@ button:hover{
 }
 h2{
   font-family: Arial, sans-serif;
+  font-size: 25px;
 }
 .container {
   width: 100%;
@@ -124,3 +127,20 @@ img {
   object-fit: cover;
   padding: 0 30px;
 }
+table{
+  text-align: left;
+  width: fit-content;
+  font-size: 20px;
+}
+td {
+  padding-right: 5px;
+}
+#header{
+  padding-left: 10px;
+}
+
+.main :hover{
+  border-color: #4a707a;
+  border-width: 3px;
+}
+

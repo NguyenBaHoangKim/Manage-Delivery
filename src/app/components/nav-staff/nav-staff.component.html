@@ -1,23 +1,41 @@
 <div class="left-bar">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <div class="container">
-        <div class="logo">
-            <img src="/assets/logo2.png" alt="">
-        </div>
+  <div class="content">
+    <div
+      class="container mat-elevation-z1"
+      [@openCloseNav]="showNav"
+    >
+      <div class="logo">
+        <img [class.icon-img]="!showNav" [src]="showNav ? '/assets/logo2.png': '/assets/img.png'" alt="">
+      </div>
 
-        <div *ngFor="let menu of menus"
-            [ngClass]="'item ' + (selectedMenuItem == menu ? 'menu-selected': '')"
-            [routerLink]="menu.path"
-            (click)="onClickItem(menu)">
-            <span class="material-symbols-outlined menu-icon">{{menu.iconStr}}</span>
-            <div class="name" >{{menu.title}}</div>
-        </div>
+      <div class="sidenav">
+        <mat-list-item style="z-index: 100;">
+          <a *ngFor="let option of menus; trackBy: optionIdentity"
+             class="item"
+             [class.menu-selected] = "selectedMenuItem == option"
+             (click)="onClickItem(option)"
+             (mouseenter)="showNav = true"
+             (mouseleave)="showNav = false"
+          >
+            <div class="option-item-icon">
+              <span class="material-symbols-outlined"> {{option.iconStr}} </span>
+            </div>
+            <div class="option-item-title">
+              {{option.title}}
+            </div>
+          </a>
+        </mat-list-item>
+      </div>
 
-        <div class="logout item">
-            <span class="material-symbols-outlined">logout</span>
-            <div class="name">Log out</div>
+      <div class="item">
+        <div class="option-item-icon">
+          <span class="material-symbols-outlined"> logout </span>
         </div>
+        <div class="option-item-title">
+          Logout
+        </div>
+      </div>
     </div>
-      
-      
+  </div>
 </div>
+

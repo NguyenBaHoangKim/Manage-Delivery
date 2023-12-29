@@ -33,6 +33,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './components/home/home.component';
+import {MatListModule} from "@angular/material/list";
+import {NgOptimizedImage} from "@angular/common";
 
 
 
@@ -62,19 +64,21 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    HttpClientModule,
-    MatDialogActions,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule, 
-    
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        HttpClientModule,
+        MatDialogActions,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatListModule,
+        NgOptimizedImage,
+
+    ],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()),

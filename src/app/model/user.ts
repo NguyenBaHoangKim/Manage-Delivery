@@ -79,10 +79,10 @@ export interface Login{
 export interface Register{
   codeid:string,
   username:string,
-  email:string
-  password:string
-  rePassword:string
-  phone_number:string
+  email:string;
+  password:string;
+  rePassword:string;
+  phone_number:string;
 }
 
 export interface OrderStatus{
