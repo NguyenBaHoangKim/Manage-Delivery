@@ -3,6 +3,7 @@ import { SidebarMenuItem, SidebarService } from './service/sidebar.service';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
 import {SidebarMenuItemUser, SidebarServiceUser} from "./service/sidebar.serviceUser";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-nav-staff',
@@ -38,8 +39,9 @@ export class NavStaffComponent {
   showNav = false
 
   constructor(private sidebarService: SidebarService,
-              private router: Router){
-    this.sidebarService.getSidebarMenu(this.codeId).subscribe(
+              private router: Router,
+              private auth : AuthService){
+    this.sidebarService.getSidebarMenu(this.auth.getCodeId()).subscribe(
       data => this.menus = data
     )
   }
@@ -56,7 +58,7 @@ export class NavStaffComponent {
   optionIdentity(index: number, value: SidebarMenuItem) {
     return value.id
   }
-  
+
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/log-in'])
