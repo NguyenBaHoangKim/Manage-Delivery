@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SidebarMenuItem, SidebarService } from './service/sidebar.service';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
+import {SidebarMenuItemUser, SidebarServiceUser} from "./service/sidebar.serviceUser";
 
 @Component({
   selector: 'app-nav-staff',
@@ -29,6 +30,7 @@ import {Router} from "@angular/router";
   ]
 })
 export class NavStaffComponent {
+  codeId: number = 1
   menus: SidebarMenuItem[] = []
   role: String = ''
   private userRoles: string[] = ['boss', 'pointManager', 'serviceManager', 'serviceStaff', 'pointStaff'];
@@ -37,7 +39,7 @@ export class NavStaffComponent {
 
   constructor(private sidebarService: SidebarService,
               private router: Router){
-    this.sidebarService.getSidebarMenu().subscribe(
+    this.sidebarService.getSidebarMenu(7).subscribe(
       data => this.menus = data
     )
   }
