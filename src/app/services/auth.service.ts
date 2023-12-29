@@ -9,8 +9,22 @@ export class AuthService {
 
   }
 
+  setCodeId(codeId: string): void {
+    console.log('cốt id'+ codeId)
+    localStorage.setItem('codeId', codeId);
+  }
+
+  getCodeId() : string{
+    let codeId: string | null= localStorage.getItem('codeId')
+    if (codeId == null) {
+      console.log('k luu duoc roi')
+      codeId = "hihi"
+    }
+    console.log("aaaaaaa"+codeId)
+    return codeId;
+  }
+
   setServiceAddressId(serviceId: string): void {
-    console.log('sơ vịt a đờ rẹt id'+serviceId)
     localStorage.setItem('serviceId', serviceId);
   }
 
@@ -20,7 +34,6 @@ export class AuthService {
       console.log('k luu duoc roi')
       serviceId = "hihi"
     }
-    console.log(serviceId)
     // let serviceId: string = 'KH01'
     return serviceId;
   }

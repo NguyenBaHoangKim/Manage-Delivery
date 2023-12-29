@@ -49,27 +49,6 @@ export class NavStaffComponent {
     this.router.navigate([item.path])
   }
 
-  // roleCheck(role: String) {
-  //   if (role == 'boss') {
-  //     return 1
-  //   }
-  //   else if (role == 'pointManager'){
-  //     return 2
-  //   }
-  //   else if (role == 'serviceManager'){
-  //     return 3
-  //   }
-  //   else if (role == 'serviceStaff'){
-  //     return 4
-  //   }
-  //   else if (role == 'pointStaff'){
-  //     return 5
-  //   }
-  //   else {
-  //     return 6
-  //   }
-  // }
-
   checkRole(roleToCheck: string): boolean {
     return this.userRoles.includes(roleToCheck);
   }
@@ -77,6 +56,7 @@ export class NavStaffComponent {
   optionIdentity(index: number, value: SidebarMenuItem) {
     return value.id
   }
+  
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/log-in'])

@@ -17,7 +17,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ServiceStaffExportCustomerComponent } from './components/service-staff-export-customer/service-staff-export-customer.component';
 
 const routes: Routes = [
-  { path: '', component: BossManagerComponent },
+  { path: '', component: DashboardComponent },
   { path: 'exccept', component: ServiceStaffExportCustomerComponent },
   { path: 'final', component: ServiceStaffExportCustomerComponent},
   { path: 'dashboard', component: DashboardComponent},
